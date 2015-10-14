@@ -22,7 +22,7 @@ require_once $path . 'PaginacaoLink.php';
 
 $_REQUEST = UtilString::clear_data($_REQUEST);
 
-ConexaoPDO::setParameters('mysql:host=localhost;dbname=pilatize', 'root', 'root');
+ConexaoPDO::setParameters('mysql:host=localhost;dbname=3heads', 'root', 'root');
 $GLOBALS['objDb'] = ConexaoPDO::getInstance();
 
 define('PESSOA_ID', $_SESSION['dados']['pessoa']['id']);

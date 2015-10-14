@@ -2,7 +2,7 @@
 
 class ConexaoPDO {
 
-    private static $db_dsn  = 'mysql:host=localhost;dbname=motor_reserva_hotel';
+    private static $db_dsn  = 'mysql:host=localhost;dbname=3heads';
     private static $db_user = 'root';
     private static $db_pass = 'root';
     private static $objInstance;
