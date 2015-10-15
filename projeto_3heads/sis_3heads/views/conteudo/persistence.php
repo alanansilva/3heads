@@ -1,9 +1,10 @@
-<?php
 header('Content-type: application/json;  charset=iso-8859-1', true);
 require_once '../../lib/php/conn_ajax.php';
 
-require_once '../../models/QuemSomos.php';
-$data = new QuemSomos();
+require_once '../../models/conteudo.php';
+$data = new conteudo();
+require_once '../../models/ConteudoCategoria.php';
+$conteudoCategoria = new ConteudoCategoria();
 
 
 foreach ($_REQUEST as $key => $value){
@@ -32,4 +33,3 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 2) {
     else
         echo json_encode(array('success' => 0));
 }
-?>
