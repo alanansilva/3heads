@@ -10,7 +10,7 @@ define('URL_POST_FILE_REMOTE', 'http://74.63.255.164/curl/');
         <meta http-equiv="Content-Language" content="pt_br" />
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
-        <title>..:: Pilatize ::.</title>
+        <title>..:: 3Heads ::.</title>
 
         <link rel="stylesheet" type="text/css" href="lib/ext/resources/css/ext-all.css" />
         <!--	<link type="text/css" rel="stylesheet" media="screen, print" href="lib/ext/resources/css/xtheme-gray.css" />-->

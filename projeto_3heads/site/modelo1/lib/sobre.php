@@ -1,20 +1,20 @@
 <!-- about -->
+
 <div id="sobre" class="testi">
     <div class="container">
         <div class="about-header">
             <h3>QUEM SOMOS</h3>
         </div>
+        <?php
+$objConteudo = $conteudo->getConteudo(null,3);
+
+?>
         <div class="testi-grids">
             <div class="col-md-6 testi-grid">
-                <h3><span>Quem somos nós?</span> Nós somos o maior negócio do mundo criativo</h3>
+                <h3><span>Quem somos nós?</span> <?php echo $objConteudo['titulo']?></h3>
             </div>
             <div class="col-md-6 testi-grid">
-                <p>Existem muitas variações disponíveis de passagens de Lorem Ipsum, 
-                    mas a maioria sofreu algum tipo de alteração, seja por inserção 
-                    de passagens com humor, ou palavras aleatórias que não parecem 
-                    nem um pouco convincentes. Se você pretende usar uma passagem 
-                    de Lorem Ipsum, precisa ter certeza de que não há algo embaraçoso 
-                    escrito escondido no meio do texto. </p>
+                <p><?php echo $objConteudo['descricao']?> </p>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -22,13 +22,18 @@
 </div>
 <!-- //about -->
 <!-- testi -->
+
+<?php
+unset($objConteudo);
+$objConteudo = $conteudo->getConteudo(null,4);
+
+?>
 <div class="about">
     <div class="container">
         <div class="about-grids">
             <div class="col-md-5 about-left">
-                <p>Ao contrário do que se acredita, Lorem Ipsum não é 
-                    simplesmente um texto randômico. Com mais de 2000 
-                    anos, suas raízes podem ser encontradas.
+                <p>
+                    <?php echo $objConteudo['descricao_breve']?>
                 </p>
                 <div class="buttonone"><a class="hvr-bounce-to-bottom morebtn text-right" href="#">Mais</a></div>
             </div>
@@ -86,6 +91,10 @@
 </div>
 <!-- //testi -->
 <!-- awarded -->
+<?php
+unset($objConteudo);
+$objConteudo = $conteudo->getConteudo(null,3);
+?>
 <div class="award">
     <div class="container">
         <div class="award-grids">
@@ -93,12 +102,8 @@
                 <img src="images/img1.jpg" alt=""/>
             </div>
             <div class="col-md-6 award-right">
-                <h3>É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página.</h3>
-                <p>O trecho padrão original de Lorem Ipsum, usado desde o século
-                    XVI, está reproduzido abaixo para os interessados. 
-                    Seções 1.10.32 e 1.10.33 de "de Finibus Bonorum et 
-                    Malorum" de Cicero também foram reproduzidas abaixo
-                    em sua forma exata original
+                <h3><?php echo $objConteudo['titulo']?></h3>
+                <p><?php echo $objConteudo['descricao']?>
                 </p>
             </div>
             <div class="clearfix"></div>

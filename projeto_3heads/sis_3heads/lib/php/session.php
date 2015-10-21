@@ -19,6 +19,6 @@ if (!isset($_SESSION['dados'])) {
         </body>
     </html>
     <?php
-    header('location:./sis_pilatize');
+    header('location:./3heads');
 }
 ?>

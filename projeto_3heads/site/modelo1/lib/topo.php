@@ -1,3 +1,31 @@
+
+<?php
+//error_reporting(E_ALL);
+//ini_set('display_errors', 0);
+require_once 'lib/conn.php';
+
+require_once '../../sis_3heads/models/Pessoa.php';
+require_once '../../sis_3heads/models/Banner.php';
+require_once '../../sis_3heads/models/BannerCategoria.php';
+require_once '../../sis_3heads/models/Conteudo.php';
+require_once '../../sis_3heads/models/ConteudoCategoria.php';
+require_once '../../sis_3heads/models/Imagem.php';
+require_once '../../sis_3heads/models/Menu.php';
+require_once '../../sis_3heads/models/Perfil.php';
+require_once '../../sis_3heads/models/TipoPessoa.php';
+require_once '../../sis_3heads/models/Usuario.php';
+
+$pessoa = new Pessoa();
+$banner = new Banner();
+$bannerCategoria = new BannerCategoria();
+$conteudo = new Conteudo();
+$conteudoCategoria = new ConteudoCategoria();
+$imagem = new Imagem();
+$menu = new Menu();
+$perfil = new Perfil();
+$tipoPessoa = new TipoPessoa();
+$usuario = new Usuario();
+?>
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com

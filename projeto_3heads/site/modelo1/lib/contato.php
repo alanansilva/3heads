@@ -1,4 +1,8 @@
 <!-- get-in -->
+<?php
+$objPessoa = $pessoa->getPessoa();
+UtilString::pr($objPessoa)
+?>
 <div id="contato" class="get-in-touch">
     <div class="container">
         <div class="get-info text-center">
@@ -18,15 +22,15 @@
         <div class="contact-grids">
             <div class="col-md-4 contact-grid text-center">
                 <div class="point-icon"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></div>
-                <p>Jl. Pahlawan VII No.247-D Sidoarjo-Surabaya-Indonesia</p>
+                <p><?php echo $objPessoa['endereco']?></p>
             </div>
             <div class="col-md-4 contact-grid text-center">
                 <div class="point-icon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></div>
-                <p><a href="mailto:info@example.com">loremipsum@hotmail.com</a></p>
+                <p><a href="mailto:info@example.com"><?php echo $objPessoa['email']?></a></p>
             </div>
             <div class="col-md-4 contact-grid text-center">
                 <div class="point-icon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></div>
-                <p>+613 0000 0000</p>
+                <p><?php echo $objPessoa['telefone']?></p>
             </div>
             <div class="clearfix"></div>
         </div>

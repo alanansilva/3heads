@@ -1,8 +1,9 @@
+<?php
 header('Content-type: application/json;  charset=iso-8859-1', true);
-require_once '../../lib/php/conn_ajax.php';
+require_once '../../lib/php/conn.php';
 
-require_once '../../models/banner.php';
-$data = new banner();
+require_once '../../models/Banner.php';
+$data = new Banner();
 require_once '../../models/BannerCategoria.php';
 $bannerCategoria = new BannerCategoria();
 

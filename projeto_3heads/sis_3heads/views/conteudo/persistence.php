@@ -1,8 +1,9 @@
+<?php
 header('Content-type: application/json;  charset=iso-8859-1', true);
-require_once '../../lib/php/conn_ajax.php';
+require_once '../../lib/php/conn.php';
 
-require_once '../../models/conteudo.php';
-$data = new conteudo();
+require_once '../../models/Conteudo.php';
+$data = new Conteudo();
 require_once '../../models/ConteudoCategoria.php';
 $conteudoCategoria = new ConteudoCategoria();
 

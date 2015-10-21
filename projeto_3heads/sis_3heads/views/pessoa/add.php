@@ -10,7 +10,7 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
                 </h5>
             </div>
         </div>
-        <form id="form_pessoa" name="form_pessoa" method="post" action="<?php echo $link ?>/add" role="form">
+        <form id="form_pessoa" name="form_pessoa" method="post" action="<?php echo $link ?>/add" role="form" enctype="multipart/form-data" >
             <input type="hidden" name="acao" value="1"/>
             <input type="hidden" name="operacao" value="2"/>
             <div class="row">
@@ -59,6 +59,23 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
                 <div class="col-md-4">
                     <label for="telefone">* Telefone</label>
                     <input type='text' name='telefone'  id='telefone' class='form-control'   placeholder="Telefone">
+                </div>
+            </div>
+             <div class="col-md-4">
+                <div class="form-group" data-toggle="tooltip" data-placement="top" title="Tamanho: 620px X 385px">
+                    <label for="icone">Logomarca</label>
+                    <input type="file" name='logomarca'  id='logomarca' />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- UPLOAD PROGRESS-->
+                    <div class="progress">
+                        <div class="bar"></div >
+                        <div class="percent">0%</div >
+                    </div>
+                    <div id="status"></div>
+                    <!-- UPLOAD PROGRESS-->
                 </div>
             </div>
             <input type="submit" class="btn btn-success" name="salvar" id="salvar" value="Salvar"/>

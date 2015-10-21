@@ -64,6 +64,21 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
                     <label for="telefone">* Telefone</label>
                     <input type='text' name='telefone'  id='telefone' class='form-control'   placeholder="Telefone" value="<?php echo $obj['telefone']?>">
                 </div>
+                    <div class="col-md-4">
+                    <div class="form-group" data-toggle="tooltip" data-placement="top" title="Tamanho: 620px X 385px">
+                        <label for="icone">Fotos</label>
+                        <input type="file" name='foto[]' multiple id='foto' />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <!-- UPLOAD PROGRESS-->
+                    <div class="progress">
+                        <div class="bar"></div >
+                        <div class="percent">0%</div>
+                    </div>
+                    <div id="status"></div>
+                    <!-- UPLOAD PROGRESS-->
+                </div>
             </div>
             <input type="submit" class="btn btn-success" name="salvar" id="salvar" value="Salvar"/>
             <input type="button" class="btn btn-primary" name="voltar" value="Voltar" onclick="window.location.href = '<?php echo $link ?>/index'"/>

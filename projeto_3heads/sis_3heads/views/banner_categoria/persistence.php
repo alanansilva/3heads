@@ -1,8 +1,9 @@
+<?php
 header('Content-type: application/json;  charset=iso-8859-1', true);
-require_once '../../lib/php/conn_ajax.php';
+require_once '../../lib/php/conn.php';
 
-require_once '../../models/banner_categoria.php';
-$data = new banner_categoria();
+require_once '../../models/BannerCategoria.php';
+$data = new BannerCategoria();
 
 
 foreach ($_REQUEST as $key => $value){

@@ -74,7 +74,7 @@ require_once 'default.php';
                             <?php
                             $i = 0;
                             $objCol = $data->getColecaoPessoa(PESSOA_ID, $_REQUEST['tipo_pessoa_id'], $_REQUEST['nome']);
-                            
+
                             $objPaginacao = new PaginacaoLink($objCol, 20, '');
                             while ($objPaginacao->colecao->Proximo()) {
                                 $obj = $objPaginacao->colecao->getItem();

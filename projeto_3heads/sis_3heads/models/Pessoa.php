@@ -132,7 +132,7 @@ class Pessoa {
         return DBSql::getCollection($sql);
     }
 
-    public function getPessoa($id) {
+    public function getPessoa($id = null, $pessoa_id = null) {
 
 
         $sql = "SELECT";
@@ -150,8 +150,12 @@ class Pessoa {
         $sql.= "	 excluido ";
         $sql.= " FROM ";
         $sql.= "	pessoa";
-        $sql.= " WHERE ";
-        $sql.= "	id = " . $id;
+        $sql.= " WHERE 1=1";
+        if (!empty($id))
+            $sql.= "	 AND id = '" . $id . "'";
+        
+        if (!empty($pessoa_id))
+            $sql.= "	 AND pessoa_id = '" . $pessoa_id . "'";
         return DBSql::getArray($sql);
     }
 

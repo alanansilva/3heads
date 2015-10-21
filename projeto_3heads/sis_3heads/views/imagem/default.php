@@ -5,8 +5,6 @@ require_once '../../models/Imagem.php';
 $data = new Imagem();
 require_once '../../models/Menu.php';
 $menu = new Menu();
-require_once '../../models/Relacionamento.php';
-$relacionamento = new Relacionamento();
 
 $link = 'app.php?app=' . $app;
 

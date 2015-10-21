@@ -1,12 +1,11 @@
+<?php
 header('Content-type: application/json;  charset=iso-8859-1', true);
-require_once '../../lib/php/conn_ajax.php';
+require_once '../../lib/php/conn.php';
 
-require_once '../../models/imagem.php';
-$data = new imagem();
+require_once '../../models/Imagem.php';
+$data = new Imagem();
 require_once '../../models/Menu.php';
 $menu = new Menu();
-require_once '../../models/Relacionamento.php';
-$relacionamento = new Relacionamento();
 
 
 foreach ($_REQUEST as $key => $value){

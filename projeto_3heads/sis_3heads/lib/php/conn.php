@@ -8,9 +8,6 @@ if (strpos(PATH, 'sistema.php')) {
 	$path = '';
 }
 
-//require_once $path . "FrameWork/FrameWork.php";
-//require_once $path . "config/defaultInc.php";
-
 require_once $path . 'ConexaoPDO.php';
 require_once $path . 'Collection.php';
 require_once $path . 'DBSql.php';
