@@ -35,7 +35,7 @@ UtilString::pr($objPessoa)
             <div class="clearfix"></div>
         </div>
         <div class="contact-info">
-            <form>
+            <form id="enviar_email" name="enviar_email">
                 <input type="text" placeholder="Seu nome" required>
                 <input type="text" placeholder="Seu e-mail" required>
                 <input type="text" placeholder="Assunto" required>
