@@ -14,7 +14,7 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
             <input type="hidden" name="acao" value="1"/>
             <input type="hidden" name="operacao" value="2"/>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="tipo_pessoa_id">* Tipo</label>
                     <?php
                     $options = array(
@@ -29,10 +29,20 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
                     echo UtilCombo::getComboCollectionOrArray($tipoPessoa->getColecaoTipoPessoa(), $options);
                     ?>
                 </div>
-                <div class="col-md-6 skin-minimal">
+                <div class="col-md-4 skin-minimal">
                     <label for="fisica_juridica">* Fisica/juridica</label>
                     <input type='radio' name='fisica_juridica'  id='fisica_juridica' class='form-control' value="F"> F
                     <input type='radio' name='fisica_juridica'  id='fisica_juridica' class='form-control' value="J"> J
+                </div>
+                  <div class="col-md-3 ">
+                    <label for="ativo">* Ativo</label>
+                    <input type="radio" id="ativo" class="radio-inline" name="ativo" value='S' checked /> Sim
+                    <input type="radio" id="ativo" class="radio-inline" name="ativo" value='N' /> Não
+                </div>
+                  <div class="col-md-3 ">
+                    <label for="ativo">* Ativo</label>
+                    <input type="radio" id="ativo" class="radio-inline" name="ativo" value='S' checked /> Sim
+                    <input type="radio" id="ativo" class="radio-inline" name="ativo" value='N' /> Não
                 </div>
             </div>
             <div class="row">
@@ -59,6 +69,10 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
                 <div class="col-md-4">
                     <label for="telefone">* Telefone</label>
                     <input type='text' name='telefone'  id='telefone' class='form-control'   placeholder="Telefone">
+                </div>
+                <div class="col-md-4">
+                    <label for="mapa_localizacao">* Mapa de Localização</label>
+                    <input type='text' name='mapa_localizacao'  id='mapa_localizacao' class='form-control'   placeholder="Mapa de Localização">
                 </div>
             </div>
              <div class="col-md-4">

@@ -53,27 +53,38 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
             <div class="row">
                  <div class="col-md-4 configuracao_equipe">
                     <label for="nome">* Nome</label>
-                    <input type='text' name='nome'  id='nome' class='form-control'   placeholder="Nome">
+                    <input type='text' name='nome'  id='nome' class='form-control'  value='<?php echo $obj['nome'] ?>'  placeholder="Nome">
                 </div>
                 <div class="col-md-4 configuracao_equipe">
                     <label for="nome">* Cargo</label>
-                    <input type='text' name='cargo'  id='cargo' class='form-control'   placeholder="Titulo">
+                    <input type='text' name='cargo'  id='cargo' class='form-control'  value='<?php echo $obj['cargo'] ?>' placeholder="Titulo">
                 </div>
                 <div class="col-md-4 configuracao_equipe">
                     <label for="nome">* Função</label>
-                    <input type='text' name='funcao'  id='funcao' class='form-control'   placeholder="Titulo">
+                    <input type='text' name='funcao'  id='funcao' class='form-control' value='<?php echo $obj['funcao'] ?>'  placeholder="Titulo">
                 </div>
                 <div class="col-md-4">
                     <label for="ordem">* Ordem</label>
                     <!--<input type='text' name='ordem'  id='ordem' class='form-control'   placeholder="Ordem">-->
-                    <select>
-                        <option value="0">1</option>
-                        <option value="1">2</option>
-                        <option value="2">3</option>
-                        <option value="3">4</option>
-                        <option value="4">5</option>
-                        <option value="5">6</option>
-                    </select>
+                         <?php
+                    $arrayOrdem = array(
+                        array('id' => '1', 'nome' => "1"),
+                        array('id' => '2', 'nome' => "2"),
+                        array('id' => '3', 'nome' => "3"),
+                        array('id' => '4', 'nome' => "4"),
+                        array('id' => '5', 'nome' => "5")
+                    );
+                    $options = array(
+                        'name' => 'ordem',
+                        'id' => 'ordem',
+                        'value' => 'id',
+                        'label' => array('nome'),
+                        'selected' => array('field' => 'id', 'value' => $obj['ordem']),
+                        'class' => array('form-control', 'input-sm', 'valid'),
+                        'option_default' => array('label' => ':: Selecione ::', 'value' => null),
+                    );
+                    echo UtilCombo::getComboCollectionOrArray($arrayOrdem, $options);
+                    ?>
                 </div>
                 <div class="col-md-4">
                     <label for="ativo">* Ativo</label>

@@ -16,7 +16,8 @@ class Pessoa {
             $sql.= " endereco,";
             $sql.= " data_insercao,";
             $sql.= " fisica_juridica,";
-            $sql.= " telefone";
+            $sql.= " telefone,";
+            $sql.= " mapa_localizacao";
             $sql.= ")";
             $sql.= "VALUES (";
             $sql.= "'" . PESSOA_ID . "',";
@@ -27,7 +28,8 @@ class Pessoa {
             $sql.= "'" . $endereco . "',";
             $sql.= "'" . date('Y-m-d') . "',";
             $sql.= "'" . $fisica_juridica . "',";
-            $sql.= "'" . $telefone . "'";
+            $sql.= "'" . $telefone . "',";
+            $sql.= "'" . $mapa_localizacao . "'";
             $sql.= ")";
 
 
@@ -58,7 +60,8 @@ class Pessoa {
             $sql.= " fisica_juridica = '" . $fisica_juridica . "',";
             $sql.= " telefone = '" . $telefone . "',";
             $sql.= " ativo = '" . $ativo . "',";
-            $sql.= " excluido = '" . $excluido . "'";
+            $sql.= " excluido = '" . $excluido . "',";
+            $sql.= " mapa_localizacao = '" . $mapa_localizacao . "'";
             $sql.="WHERE";
             $sql.="	id = " . $id;
 
@@ -107,7 +110,8 @@ class Pessoa {
         $sql.= "	 fisica_juridica, ";
         $sql.= "	 telefone, ";
         $sql.= "	 ativo, ";
-        $sql.= "	 excluido ";
+        $sql.= "	 excluido, ";
+        $sql.= "	 mapa_localizacao ";
         $sql.= "FROM ";
         $sql.= "	pessoa ";
         $sql.= "WHERE 1=1 ";
@@ -147,7 +151,8 @@ class Pessoa {
         $sql.= "	 fisica_juridica, ";
         $sql.= "	 telefone, ";
         $sql.= "	 ativo, ";
-        $sql.= "	 excluido ";
+        $sql.= "	 excluido, ";
+        $sql.= "	 mapa_localizacao ";
         $sql.= " FROM ";
         $sql.= "	pessoa";
         $sql.= " WHERE 1=1";

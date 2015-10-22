@@ -42,43 +42,49 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
             <div class="row">
                 <div class="col-md-4">
                     <label for="cpf_cnpj">* Cpf/cnpj</label>
-                    <input type='text' name='cpf_cnpj' id='cpf_cnpj' class='form-control'   placeholder="Cpf/cnpj" value="<?php echo $obj['cpf_cnpj']?>">
+                    <input type='text' name='cpf_cnpj' id='cpf_cnpj' class='form-control'   placeholder="Cpf/cnpj" value="<?php echo $obj['cpf_cnpj'] ?>">
                 </div>
                 <div class="col-md-4">
                     <label for="nome">* Nome</label>
-                    <input type='text' name='nome'  id='nome' class='form-control'   placeholder="Nome" value="<?php echo $obj['nome']?>">
+                    <input type='text' name='nome'  id='nome' class='form-control'   placeholder="Nome" value="<?php echo $obj['nome'] ?>">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <label for="email">* Email</label>
-                    <input type='text' name='email'  id='email' class='form-control'   placeholder="Email" value="<?php echo $obj['email']?>">
+                    <input type='text' name='email'  id='email' class='form-control'   placeholder="Email" value="<?php echo $obj['email'] ?>">
                 </div>
                 <div class="col-md-4">
                     <label for="endereco">* Endereço</label>
-                    <input type='text' name='endereco'  id='endereco' class='form-control'   placeholder="Endereco" value="<?php echo $obj['endereco']?>">
+                    <input type='text' name='endereco'  id='endereco' class='form-control'   placeholder="Endereco" value="<?php echo $obj['endereco'] ?>">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <label for="telefone">* Telefone</label>
-                    <input type='text' name='telefone'  id='telefone' class='form-control'   placeholder="Telefone" value="<?php echo $obj['telefone']?>">
-                </div>
-                    <div class="col-md-4">
-                    <div class="form-group" data-toggle="tooltip" data-placement="top" title="Tamanho: 620px X 385px">
-                        <label for="icone">Fotos</label>
-                        <input type="file" name='foto[]' multiple id='foto' />
-                    </div>
+                    <input type='text' name='telefone'  id='telefone' class='form-control'   placeholder="Telefone" value="<?php echo $obj['telefone'] ?>">
                 </div>
                 <div class="col-md-4">
-                    <!-- UPLOAD PROGRESS-->
-                    <div class="progress">
-                        <div class="bar"></div >
-                        <div class="percent">0%</div>
-                    </div>
-                    <div id="status"></div>
-                    <!-- UPLOAD PROGRESS-->
+                    <label for="mapa_localizacao">* Mapa de Localização</label>
+                    <input type='text' name='mapa_localizacao'  id='mapa_localizacao' class='form-control'   placeholder="Mapa de Localização">
                 </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group" data-toggle="tooltip" data-placement="top" title="Tamanho: 620px X 385px">
+                    <label for="icone">Fotos</label>
+                    <input type="file" name='foto[]' multiple id='foto' />
+                </div>
+            </div>
+            <div class='row'>
+            <div class="col-md-4">
+                <!-- UPLOAD PROGRESS-->
+                <div class="progress">
+                    <div class="bar"></div >
+                    <div class="percent">0%</div>
+                </div>
+                <div id="status"></div>
+                <!-- UPLOAD PROGRESS-->
+            </div>
             </div>
             <input type="submit" class="btn btn-success" name="salvar" id="salvar" value="Salvar"/>
             <input type="button" class="btn btn-primary" name="voltar" value="Voltar" onclick="window.location.href = '<?php echo $link ?>/index'"/>

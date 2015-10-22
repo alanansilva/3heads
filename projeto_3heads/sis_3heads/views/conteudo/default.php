@@ -11,8 +11,6 @@ $link = 'app.php?app=' . $app;
 
 <script>
     $(document).ready(function () {
-        
-        
         $("#conteudo_categoria_id").change(function(){
             console.log($(this).val());
             if ($(this).val() == 4){
@@ -23,8 +21,6 @@ $link = 'app.php?app=' . $app;
                 $(".configuracao_equipe_2").show();
             }
         });
-        
-        
         
         $('#form_conteudo').validate({
          

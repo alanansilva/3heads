@@ -13,6 +13,9 @@ $objPessoa = $pessoa->getPessoa();
     <div class="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2482.432383990807!2d0.028213999961443994!3d51.52362882484525!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1423469959819"></iframe>
     </div>
+<!--         <span>
+                                <iframe src="<?php echo $_SESSION['dados']['config']['rede']['mapa_localizacao'] ?>" scrolling="no" style="border:none; overflow:hidden; width:100%; height:232px;" allowtransparency="true" frameborder="0"></iframe>
+                            </span>-->
 </div>
 <!-- //get-in -->
 <!-- contact-us -->
@@ -21,15 +24,15 @@ $objPessoa = $pessoa->getPessoa();
         <div class="contact-grids">
             <div class="col-md-4 contact-grid text-center">
                 <div class="point-icon"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></div>
-                <p><?php echo $objPessoa['endereco']?></p>
+                <p><?php echo $objPessoa['endereco'] ?></p>
             </div>
             <div class="col-md-4 contact-grid text-center">
                 <div class="point-icon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></div>
-                <p><a href="mailto:info@example.com"><?php echo $objPessoa['email']?></a></p>
+                <p><a href="mailto:info@example.com"><?php echo $objPessoa['email'] ?></a></p>
             </div>
             <div class="col-md-4 contact-grid text-center">
                 <div class="point-icon"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></div>
-                <p><?php echo $objPessoa['telefone']?></p>
+                <p><?php echo $objPessoa['telefone'] ?></p>
             </div>
             <div class="clearfix"></div>
         </div>

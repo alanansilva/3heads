@@ -13,23 +13,18 @@ $link = 'app.php?app=' . $app;
         $('#form_pessoa').validate({
             rules: {
                 cpf_cnpj: {
-                    minlength: 2,
                     required: true
                 },
                 nome: {
-                    minlength: 2,
                     required: true
                 },
                 email: {
-                    minlength: 2,
                     required: true
                 },
                 endereco: {
-                    minlength: 2,
                     required: true
                 },
                 telefone: {
-                    minlength: 2,
                     required: true
                 },
             },
@@ -41,7 +36,7 @@ $link = 'app.php?app=' . $app;
                 else if ($('input[name=acao]').val() == 2)
                     msg = 'Deseja realmente alterar o registro?'
 
-                $.getMsgAjaxSubmitForm(msg, form, "<?php echo $pathApp . $app . "/persistence.php" ?>");
+                $.getMsgAjaxSubmitFormUpload(msg, form, "<?php echo $pathApp . $app . "/persistence.php" ?>");
                 return false;
             },
             messages: {
