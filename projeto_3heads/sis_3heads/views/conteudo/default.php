@@ -15,38 +15,19 @@ $link = 'app.php?app=' . $app;
         
         $("#conteudo_categoria_id").change(function(){
             console.log($(this).val());
-            if ($(this).val() == 4)
-                $(".teste").removeAttr('disabled');;
-            else
-                $(".teste").attr('disabled', 'disabled');
+            if ($(this).val() == 4){
+                $(".configuracao_equipe").show();
+                $(".configuracao_equipe_2").hide();
+            }else{
+                $(".configuracao_equipe").hide();
+                $(".configuracao_equipe_2").show();
+            }
         });
         
         
         
         $('#form_conteudo').validate({
-            rules: {
-                titulo: {
-                    required: true
-                },
-                subtitulo: {
-                    required: true
-                },
-                descricao: {
-                    required: true
-                },
-                descricao_breve: {
-                    required: true
-                },
-                ordem: {
-                    required: true
-                },
-                ativo: {
-                    required: true
-                },
-                valor: {
-                    required: true
-                }
-            }, //end rules
+         
               submitHandler: function(form) {
                 var msg;
 

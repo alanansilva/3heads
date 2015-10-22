@@ -15,7 +15,10 @@ class Conteudo {
             $sql.= " descricao_breve,";
             $sql.= " ordem,";
             $sql.= " ativo,";
-            $sql.= " valor";
+            $sql.= " valor,";
+            $sql.= " nome,";
+            $sql.= " cargo,";
+            $sql.= " funcao";
             $sql.= ")";
             $sql.= "VALUES (";
             $sql.= "'" . $conteudo_categoria_id . "',";
@@ -25,7 +28,10 @@ class Conteudo {
             $sql.= "'" . $descricao_breve . "',";
             $sql.= "'" . $ordem . "',";
             $sql.= "'" . $ativo . "',";
-            $sql.= "'" . $valor . "'";
+            $sql.= "'" . $valor . "',";
+            $sql.= "'" . $nome . "',";
+            $sql.= "'" . $cargo . "',";
+            $sql.= "'" . $funcao . "'";
             $sql.= ")";
 
 
@@ -53,7 +59,10 @@ class Conteudo {
             $sql.= " descricao_breve = '" . $descricao_breve . "',";
             $sql.= " ordem = '" . $ordem . "',";
             $sql.= " ativo = '" . $ativo . "',";
-            $sql.= " valor = '" . $valor . "'";
+            $sql.= " valor = '" . $valor . "',";
+            $sql.= " nome = '" . $nome . "',";
+            $sql.= " cargo = '" . $cargo . "',";
+            $sql.= " funcao = '" . $funcao . "'";
             $sql.="WHERE";
             $sql.="	id = " . $id;
 
@@ -99,7 +108,10 @@ class Conteudo {
         $sql.= "	 descricao_breve, ";
         $sql.= "	 ordem, ";
         $sql.= "	 ativo, ";
-        $sql.= "	 valor ";
+        $sql.= "	 valor, ";
+        $sql.= "	 nome,";
+        $sql.= "	 cargo, ";
+        $sql.= "	 funcao ";
         $sql.= "FROM ";
         $sql.= "	conteudo ";
         $sql.= "WHERE 1=1 ";
@@ -126,7 +138,10 @@ class Conteudo {
         $sql.= "	 descricao_breve, ";
         $sql.= "	 ordem, ";
         $sql.= "	 ativo, ";
-        $sql.= "	 valor ";
+        $sql.= "	 valor, ";
+        $sql.= "	 nome, ";
+        $sql.= "	 cargo, ";
+        $sql.= "	 funcao ";
         $sql.= " FROM ";
         $sql.= "	conteudo";
         $sql.= " WHERE 1=1";

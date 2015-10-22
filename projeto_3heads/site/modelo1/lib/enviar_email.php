@@ -50,8 +50,8 @@ UtilString::print_pre($_REQUEST);
             Pacote indicado:
         </td>
         <td>
-            <a href="<?php echo $url_enviar_email?>">
-                <?php echo $objPacote['nome'] ?>
+            <a href="<?php //echo $url_enviar_email?>">
+                <?php// echo $objPacote['nome'] ?>
             </a>
         </td>
     </tr>-->

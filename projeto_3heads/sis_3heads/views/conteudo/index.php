@@ -4,6 +4,8 @@ require_once 'default.php';
 <div class='container-fluid'>
     <div id='divFiltro' class='x-hidden pesquisar'>
         <form id="form_conteudo" name="form_conteudo" method="post" action="<?php echo $link ?>/index" role="form">
+            <input type='hidden' name='conteudo_categoria_id'  class='form-control' placeholder="Titulo" value="<?php echo $_REQUEST['conteudo_categoria_id'] ?>">
+
             <div>
                 <div class="col-md-6">
                     <label for="id">* Id</label>
@@ -14,8 +16,8 @@ require_once 'default.php';
                 <div class="col-md-6">
                     <label for="conteudo_categoria_id">* Conteudo_categoria_id</label>
                     <!--<input type='text' name='conteudo_categoria_id'  id='conteudo_categoria_id' class='form-control'   placeholder="Conteudo_categoria_id">-->
-                 <?php
-                 $objColConteudoCategoria = $conteudoCategoria->getColecaoConteudoCategoria();
+                    <?php
+                    $objColConteudoCategoria = $conteudoCategoria->getColecaoConteudoCategoria();
                     $options = array(
                         'name' => 'conteudo_categoria_id',
                         'id' => 'conteudo_categoria_id',
@@ -35,7 +37,7 @@ require_once 'default.php';
                     <input type='text' name='titulo'  id='titulo' class='form-control'   placeholder="Titulo">
                 </div>
             </div>
-             <div>
+            <div>
                 <div class="col-md-12">
                     <input type="submit" class="btn btn-success" name="salvar" id="salvar" value="Salvar"/>
                     <input type="button" class="btn btn-primary" name="voltar" value="Voltar" onclick="window.location.href = '<?php echo $link ?>/index'"/>
@@ -66,13 +68,13 @@ require_once 'default.php';
                             <tr>
                                 <th>Id</th>
                                 <th>Categoria</th>
-                                <th>Titulo</th>
+                                <th>Nome/Titulo</th>
                                 <th class='tdAcoes'>Ações</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th colspan='5'>&nbsp;</th>
+                                <th colspan='4'>&nbsp;</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -88,8 +90,14 @@ require_once 'default.php';
                                 <tr  style='text-align: center;'>
                                     <td><?php echo $obj['id'] ?></td>
                                     <td><?php echo $objConteudoCategoria['nome'] ?></td>
-                                    <td><?php echo $obj['titulo'] ?></td>
-                                      <td class="actions">
+                                    <td><?php
+                            if (!empty($obj['nome'])) {
+                                echo $obj['nome'];
+                            } else {
+                                echo $obj['titulo'];
+                            }
+                                ?></td>
+                                    <td class="actions">
                                         <a class="btn btn-primary" data-toggle="tooltip" title="Editar" href="<?php echo $link ?>/edit&id=<?php echo $obj['id'] ?>&acao=2&operacao=1">
                                             <i class="glyphicon glyphicon-pencil"></i>
                                         </a>

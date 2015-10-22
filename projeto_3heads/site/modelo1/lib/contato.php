@@ -1,7 +1,6 @@
 <!-- get-in -->
 <?php
 $objPessoa = $pessoa->getPessoa();
-UtilString::pr($objPessoa)
 ?>
 <div id="contato" class="get-in-touch">
     <div class="container">
@@ -35,7 +34,7 @@ UtilString::pr($objPessoa)
             <div class="clearfix"></div>
         </div>
         <div class="contact-info">
-            <form id="enviar_email" name="enviar_email">
+            <form id="enviar_email" name="enviar_email" action="../lib/enviar_email.php" method="POST">
                 <input type="text" placeholder="Seu nome" required>
                 <input type="text" placeholder="Seu e-mail" required>
                 <input type="text" placeholder="Assunto" required>

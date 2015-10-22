@@ -31,16 +31,28 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
                     echo UtilCombo::getComboCollectionOrArray($objColConteudoCategoria, $options);
                     ?>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 configuracao_equipe_2">
                     <label for="titulo">* Titulo</label>
                     <input type='text' name='titulo'  id='titulo' class='form-control'   placeholder="Titulo">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 configuracao_equipe_2">
                     <label for="subtitulo">* Subtitulo</label>
                     <input type='text' name='subtitulo'  id='subtitulo' class='form-control'   placeholder="Subtitulo">
                 </div>
             </div>
             <div class="row">
+                  <div class="col-md-4 configuracao_equipe" style="display: none">
+                    <label for="nome">* Nome</label>
+                    <input type='text' name='nome'  id='nome' class='form-control'   placeholder="Nome">
+                </div>
+                <div class="col-md-4 configuracao_equipe"  style="display: none">
+                    <label for="nome">* Cargo</label>
+                    <input type='text' name='cargo'  id='cargo' class='form-control'   placeholder="Titulo">
+                </div>
+                <div class="col-md-4 configuracao_equipe"  style="display: none">
+                    <label for="nome">* Função</label>
+                    <input type='text' name='funcao'  id='funcao' class='form-control'   placeholder="Titulo">
+                </div>
                 <div class="col-md-4">
                     <label for="ordem">* Ordem</label>
                     <!--<input type='text' name='ordem'  id='ordem' class='form-control'   placeholder="Ordem">-->
@@ -53,35 +65,24 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
                         <option value="5">6</option>
                     </select>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 ">
                     <label for="ativo">* Ativo</label>
                     <input type="radio" id="ativo" class="radio-inline" name="ativo" value='S' checked /> Sim
                     <input type="radio" id="ativo" class="radio-inline" name="ativo" value='N' /> Não
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 configuracao_equipe_2">
                     <label for="valor">* Valor</label>
                     <input type='text' name='valor'  id='valor' class='form-control' placeholder="Valor">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 configuracao_equipe_2">
                     <label for="descricao_breve">* Descricao_breve</label>
                     <input type='text' name='descricao_breve'  id='descricao_breve' class='form-control'   placeholder="Descricao_breve">
                 </div>
             </div>
-<!--            <div class="row">
-                <div class="col-md-12">
-                    <label for="descricao">Descricao</label>
-                    <textarea class="ckeditor" id="descricao" name="descricao"></textarea>
-                </div>
-            </div>-->
-            
-            <?php 
-            
-//            $objConteudoCategoria = $conteudoCategoria->getConteudoCategoria(3);
-            ?>
-            <div class="row teste" disabled="" >
-                <div class="col-md-12 teste" >
+            <div class="row">
+                <div class="col-md-12 configuracao_equipe_2">
                     <label for="descricao">Descricao</label>
                     <textarea class="ckeditor" id="descricao" name="descricao"></textarea>
                 </div>
