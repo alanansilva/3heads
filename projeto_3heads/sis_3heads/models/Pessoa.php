@@ -17,6 +17,8 @@ class Pessoa {
             $sql.= " data_insercao,";
             $sql.= " fisica_juridica,";
             $sql.= " telefone,";
+            $sql.= "	 ativo, ";
+            $sql.= "	 excluido, ";
             $sql.= " mapa_localizacao";
             $sql.= ")";
             $sql.= "VALUES (";
@@ -29,9 +31,10 @@ class Pessoa {
             $sql.= "'" . date('Y-m-d') . "',";
             $sql.= "'" . $fisica_juridica . "',";
             $sql.= "'" . $telefone . "',";
+            $sql.= "'" . $ativo . "',";
+            $sql.= "'" . $excluido . "',";
             $sql.= "'" . $mapa_localizacao . "'";
             $sql.= ")";
-
 
             DBSql::getExecute($sql);
 
@@ -50,7 +53,7 @@ class Pessoa {
         try {
 
             $sql = "UPDATE pessoa SET";
-            $sql.= " pessoa_id = '" . $pessoa_id . "',";
+            $sql.= " pessoa_id = '" . PESSOA_ID . "',";
             $sql.= " tipo_pessoa_id = '" . $tipo_pessoa_id . "',";
             $sql.= " cpf_cnpj = '" . $cpf_cnpj . "',";
             $sql.= " nome = '" . $nome . "',";
@@ -62,9 +65,9 @@ class Pessoa {
             $sql.= " ativo = '" . $ativo . "',";
             $sql.= " excluido = '" . $excluido . "',";
             $sql.= " mapa_localizacao = '" . $mapa_localizacao . "'";
-            $sql.="WHERE";
+            $sql.=" WHERE";
             $sql.="	id = " . $id;
-
+            
             DBSql::getExecute($sql);
 
             return true;
@@ -121,18 +124,18 @@ class Pessoa {
 
         if (!empty($tipo_pessoa_id))
             $sql.= "	 AND tipo_pessoa_id = '" . $tipo_pessoa_id . "'";
-        
+
         if (!empty($nome))
             $sql.= "	 AND nome LIKE '%" . $nome . "%'";
 
         if (!empty($excluido))
             $sql.= "	 AND excluido = '" . $excluido . "'";
-        
+
         if (!empty($ativo))
             $sql.= "	 AND ativo = '" . $ativo . "'";
 
         $sql.= "ORDER BY nome";
-        
+
         return DBSql::getCollection($sql);
     }
 
@@ -158,7 +161,7 @@ class Pessoa {
         $sql.= " WHERE 1=1";
         if (!empty($id))
             $sql.= "	 AND id = '" . $id . "'";
-        
+
         if (!empty($pessoa_id))
             $sql.= "	 AND pessoa_id = '" . $pessoa_id . "'";
         return DBSql::getArray($sql);

@@ -14,7 +14,7 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
             <input type="hidden" name="acao" value="1"/>
             <input type="hidden" name="operacao" value="2"/>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="tipo_pessoa_id">* Tipo</label>
                     <?php
                     $options = array(
@@ -29,20 +29,20 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
                     echo UtilCombo::getComboCollectionOrArray($tipoPessoa->getColecaoTipoPessoa(), $options);
                     ?>
                 </div>
-                <div class="col-md-4 skin-minimal">
+                <div class="col-md-3 skin-minimal">
                     <label for="fisica_juridica">* Fisica/juridica</label>
-                    <input type='radio' name='fisica_juridica'  id='fisica_juridica' class='form-control' value="F"> F
-                    <input type='radio' name='fisica_juridica'  id='fisica_juridica' class='form-control' value="J"> J
+                    <input type='radio' name='fisica_juridica'  id='fisica_juridica' class='radio-inline' value="F"> F
+                    <input type='radio' name='fisica_juridica'  id='fisica_juridica' class='radio-inlinel' value="J"> J
                 </div>
-                  <div class="col-md-3 ">
+                  <div class="col-md-3 skin-minimal ">
                     <label for="ativo">* Ativo</label>
                     <input type="radio" id="ativo" class="radio-inline" name="ativo" value='S' checked /> Sim
                     <input type="radio" id="ativo" class="radio-inline" name="ativo" value='N' /> Não
                 </div>
-                  <div class="col-md-3 ">
-                    <label for="ativo">* Ativo</label>
-                    <input type="radio" id="ativo" class="radio-inline" name="ativo" value='S' checked /> Sim
-                    <input type="radio" id="ativo" class="radio-inline" name="ativo" value='N' /> Não
+                  <div class="col-md-3 skin-minimal ">
+                    <label for="excluido">* Excluido</label>
+                    <input type="radio" id="excluido" class="radio-inline" name="excluido" value='S'  /> Sim
+                    <input type="radio" id="excluido" class="radio-inline" name="excluido" value='N' checked /> Não
                 </div>
             </div>
             <div class="row">

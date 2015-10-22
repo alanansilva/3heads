@@ -2,11 +2,11 @@
 
 header("Content-type: application/json;  charset=iso-8859-1", true);
 require_once '../../lib/php/conn.php';
-
 require_once '../../models/Pessoa.php';
-
-
 $data = new Pessoa();
+require_once '../../models/TipoPessoa.php';
+$tipoPessoa = new TipoPessoa();
+
 
 foreach ($_REQUEST as $key => $value)
     $_REQUEST[$key] = utf8_decode($value);

@@ -17,7 +17,7 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
             <input type="hidden" name="operacao" value="2"/>
             <input type="hidden" name="id" value="<?php echo$_REQUEST['id'] ?>"/>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <label for="tipo_pessoa_id">* Tipo</label>
                     <?php
                     $options = array(
@@ -33,10 +33,32 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
                     echo UtilCombo::getComboCollectionOrArray($tipoPessoa->getColecaoTipoPessoa(), $options);
                     ?>
                 </div>
-                <div class="col-md-6 skin-minimal">
+                 <div class="col-md-3 skin-minimal">
                     <label for="fisica_juridica">* Fisica/juridica</label>
-                    <input type='radio' name='fisica_juridica'  id='fisica_juridica' class='form-control' value="F"> F
-                    <input type='radio' name='fisica_juridica'  id='fisica_juridica' class='form-control' value="J"> J
+                    <input type='radio' name='fisica_juridica'  id='fisica_juridica'  value='S' <?php if ($obj['fisica_juridica'] == 'F') {
+                    echo 'checked';
+                } ?> />F
+                    <input type='radio' name='fisica_juridica'  id='fisica_juridica'  value='N' <?php if ($obj['fisica_juridica'] == 'J') {
+                    echo 'checked';
+                } ?>/>J
+                </div>
+                 <div class="col-md-3">
+                    <label for="ativo">* Ativo</label>
+                    <input type='radio' name='ativo'  id='ativo'  value='S' <?php if ($obj['ativo'] == 'S') {
+                    echo 'checked';
+                } ?> />Sim 
+                    <input type='radio' name='ativo'  id='ativo'  value='N' <?php if ($obj['ativo'] == 'N') {
+                    echo 'checked';
+                } ?>/>Não
+                </div>
+                 <div class="col-md-3">
+                    <label for="excluido">* Excluido</label>
+                    <input type='radio' name='excluido'  id='excluido'  value='S' <?php if ($obj['excluido'] == 'S') {
+                    echo 'checked';
+                } ?> />Sim 
+                    <input type='radio' name='excluido'  id='excluido'  value='N' <?php if ($obj['excluido'] == 'N') {
+                    echo 'checked';
+                } ?>/>Não
                 </div>
             </div>
             <div class="row">
@@ -66,7 +88,7 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
                 </div>
                 <div class="col-md-4">
                     <label for="mapa_localizacao">* Mapa de Localização</label>
-                    <input type='text' name='mapa_localizacao'  id='mapa_localizacao' class='form-control'   placeholder="Mapa de Localização">
+                    <input type='text' name='mapa_localizacao'  id='mapa_localizacao' class='form-control' value="<?php echo $obj['mapa_localizacao'] ?>"  placeholder="Mapa de Localização">
                 </div>
             </div>
             <div class="col-md-4">
