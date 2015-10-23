@@ -1,11 +1,12 @@
 <!-- banner-slider -->
-<div id="clientes" class="clientes">
+<div id="clientes" class="clientes" style="padding: 80px 0px;">
     <div class="container">
         <div class="about-header">
             <h3>CLIENTES</h3>
         </div>
-        <div class="nbs-flexisel-container"><div class="nbs-flexisel-inner"><ul id="flexiselDemo1" class="nbs-flexisel-ul" style="left: -228px; display: block;">			
-
+        <div class="nbs-flexisel-container">
+            <div class="nbs-flexisel-inner">
+                <ul id="flexiselDemo1" class="nbs-flexisel-ul" style="left: -228px; display: block;">			
                     <li class="nbs-flexisel-item" style="width: 300px;">
                         <div class="sliderfig-grid">
                             <img src="images/clientes/5.png" alt=" " class="img-responsive">
@@ -46,17 +47,18 @@
                             <img src="images/clientes/1.png" alt=" " class="img-responsive">
                         </div>
                     </li>
-
-
                 </ul>
-                <div class="nbs-flexisel-nav-left" style="top: 27.5px;"></div><div class="nbs-flexisel-nav-right" style="top: 27.5px;"></div></div></div>
+<!--                <div class="nbs-flexisel-nav-left" style="top: 27.5px;"></div>
+                <div class="nbs-flexisel-nav-right" style="top: 27.5px;"></div>-->
+            </div>
+        </div>
         <script type="text/javascript">
             $(window).load(function () {
                 $("#flexiselDemo1").flexisel({
-                    visibleItems: 7,
-                    animationSpeed: 1000,
+                    visibleItems: 5,
+                    animationSpeed: 700,
                     autoPlay: true,
-                    autoPlaySpeed: 3000,
+                    autoPlaySpeed: 2000,
                     pauseOnHover: true,
                     enableResponsiveBreakpoints: true,
                     responsiveBreakpoints: {

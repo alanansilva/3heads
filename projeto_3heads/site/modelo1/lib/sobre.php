@@ -5,34 +5,33 @@
             <h3>QUEM SOMOS</h3>
         </div>
         <?php
-$objConteudo = $conteudo->getConteudo(null,3);
-
-?>
+        $objConteudo = $conteudo->getConteudo(null, 3);
+        ?>
         <div class="testi-grids">
             <div class="col-md-6 testi-grid">
-                <h3><span>Quem somos nós?</span> <?php echo $objConteudo['titulo']?></h3>
+                <h3><span>Quem somos nós?</span> <?php echo $objConteudo['titulo'] ?></h3>
             </div>
             <div class="col-md-6 testi-grid">
-                <p><?php echo $objConteudo['descricao']?> </p>
+                <p><?php echo $objConteudo['descricao'] ?> </p>
             </div>
             <div class="clearfix"></div>
         </div>
     </div>
 </div>
+<div class="clearfix"></div>
 <!-- //about -->
 <!-- testi -->
 
 <?php
 unset($objConteudo);
-$objConteudo = $conteudo->getConteudo(null,4);
-
+$objConteudo = $conteudo->getConteudo(null, 4);
 ?>
 <div class="about">
     <div class="container">
         <div class="about-grids">
             <div class="col-md-5 about-left">
                 <p>
-                    <?php echo $objConteudo['descricao_breve']?>
+                    <?php echo $objConteudo['descricao_breve'] ?>
                 </p>
                 <div class="buttonone"><a class="hvr-bounce-to-bottom morebtn text-right" href="#">Mais</a></div>
             </div>
@@ -92,7 +91,7 @@ $objConteudo = $conteudo->getConteudo(null,4);
 <!-- awarded -->
 <?php
 unset($objConteudo);
-$objConteudo = $conteudo->getConteudo(null,3);
+$objConteudo = $conteudo->getConteudo(null, 3);
 ?>
 <div class="award">
     <div class="container">
@@ -101,8 +100,8 @@ $objConteudo = $conteudo->getConteudo(null,3);
                 <img src="images/img1.jpg" alt=""/>
             </div>
             <div class="col-md-6 award-right">
-                <h3><?php echo $objConteudo['titulo']?></h3>
-                <p><?php echo $objConteudo['descricao']?>
+                <h3><?php echo $objConteudo['titulo'] ?></h3>
+                <p><?php echo $objConteudo['descricao'] ?>
                 </p>
             </div>
             <div class="clearfix"></div>

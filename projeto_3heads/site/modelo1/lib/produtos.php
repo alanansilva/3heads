@@ -1,7 +1,15 @@
+<link rel="stylesheet" href="js/colorbox/colorbox.css">
+<script type="text/javascript" src="js/colorbox/jquery.colorbox-min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".inline").colorbox({inline: true, width: "600"});
+    });
+</script>
+
 <!-- banner-slider -->
 <div id="produtos" class="produtos">
     <div class="about-header">
-        <h3>Produtos</h3>
+        <h3>PRODUTOS</h3>
     </div>
 </div>
 <div class="clearfix"></div>
@@ -10,7 +18,7 @@
 <style>
     /*---portfolio-section-------*/
     .port-section {
-        padding: 3.5em 0 4em 0;
+        padding: 1.5em 0 4em 0;
         position:relative;
     }
     .port-section  h2{
@@ -27,14 +35,25 @@
         width: 24.2%;
         float: left;
         margin-right: 1.0%;
+        margin-bottom: 10px;
         padding: 1em 1em;
         position: relative;
+        -webkit-transition: all 600ms ease;
+        -moz-transition: all 600ms ease;
+        -ms-transition: all 600ms ease;
+        -o-transition: all 600ms ease;
+        transition: all 600ms ease;
     }
     .port-grid.lost{
         margin-right:0%;
     }
     .port-grid:hover   {
         background:#03BEF0;
+        -webkit-transition: all 600ms ease;
+        -moz-transition: all 600ms ease;
+        -ms-transition: all 600ms ease;
+        -o-transition: all 600ms ease;
+        transition: all 600ms ease;
     }
     .box_type {
         background: #03BEF0;
@@ -65,13 +84,15 @@
         height: 27px;display:inline-block;
         background:url("../images/s-icons.png")-277px -83px no-repeat #03BEF0;
     }
-    .text  a  h3{
+    .text a h3{
         font-size: 1.2em;
         font-weight: 600;
         text-transform: uppercase;
         margin-top: 1em;
-        padding: 0em 0 0.8em 0;
-        border-bottom: 2px ridge rgba(239, 240, 240, 0.08);
+        padding: 0em 0 0 0;
+    }
+    .text a:hover{
+        text-decoration: none;
     }
     .text p{
         font-size:0.95em;
@@ -79,14 +100,20 @@
         line-height:1.8em;
         margin:0.5em 0;
     }
-    .port-grid :hover  .text ,.port-grid.lost:hover .text,.port-grid.lost:hover .text h3,.port-grid:hover .text h3{
+    .port-grid .port-grid-price{
+        color: #C00;
+        font-size: 14px;
+    }
+    .port-grid .port-grid-price-sub{
+        color: #000;
+        font-weight: 700;
+        font-size: 10px;
+    }
+    .port-grid :hover  .text ,.port-grid.lost:hover .text,.port-grid.lost:hover .text h3,.port-grid:hover .text h3, .port-grid :hover .port-grid-price, .port-grid :hover .port-grid-price-sub{
         color:#fff;
     }
     .port-grid:hover .text p {
         color: #fff;
-    }
-    .port-grid:hover .text h3 {
-        border-bottom: 1px solid #fff;
     }
     /*----mid-section----*/
     .bottom-section {
@@ -150,62 +177,145 @@
     <div class="container">
         <div class="port-grids">
             <div class="col-md-3 port-grid wow zoomInLeft animated">
-                <a href="portfolio.html"><img src="images/p1.jpg" class="img-responsive" alt="" /></a>
-                <div class="box_type">WEB DESIGN</div>
-                <!--                <div class="box-hover">
-                                    <ul class="port-icons">
-                                        <li><i class="per"></i></li>
-                                        <li><i class="loca"></i></li>
-                                    </ul>
-                                </div>-->
+                <a class="inline" href="#inline_content"><img src="images/p1.jpg" class="img-responsive" alt="" /></a>
                 <div class="text">
-                    <a href="portfolio.html"><h3>I am an amazing project</h3></a>
+                    <a class="inline" href="#inline_content"><h3>I am an amazing project</h3></a>
+                    <div class="port-grid-price">R$86,00</div>
+                    <div class="port-grid-price-sub">8X R$ 10,75</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis. </p>
                 </div>
             </div>
             <div class="col-md-3 port-grid wow zoomInLeft animated" >
-                <a href="portfolio.html"><img src="images/p2.jpg" class="img-responsive" alt="" /></a>
-                <div class="box_type">R$100,00</div>
-                <!--                <div class="box-hover">
-                                    <ul class="port-icons">
-                                        <li><i class="per"></i></li>
-                                        <li><i class="loca"></i></li>
-                                    </ul>
-                                </div>-->
+                <a class="inline" href="#inline_content"><img src="images/p2.jpg" class="img-responsive" alt="" /></a>
                 <div class="text">
-                    <a href="portfolio.html"><h3>I am an amazing project</h3></a>
+                    <a class="inline" href="#inline_content"><h3>I am an amazing project</h3></a>
+                    <div class="port-grid-price">R$86,00</div>
+                    <div class="port-grid-price-sub">8X R$ 10,75</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis. </p>
                 </div>
             </div>
             <div class="col-md-3 port-grid wow zoomInRight animated">
-                <a href="portfolio.html"><img src="images/p3.jpg" class="img-responsive" alt="" /></a>
-                <div class="box_type">R$100,00</div>
-                <!--                <div class="box-hover">
-                                    <ul class="port-icons">
-                                        <li><i class="per"></i></li>
-                                        <li><i class="loca"></i></li>
-                                    </ul>
-                                </div>-->
+                <a class="inline" href="#inline_content"><img src="images/p3.jpg" class="img-responsive" alt="" /></a>
                 <div class="text">
-                    <a href="portfolio.html"><h3>I am an amazing project</h3></a>
+                    <a class="inline" href="#inline_content"><h3>I am an amazing project</h3></a>
+                    <div class="port-grid-price">R$86,00</div>
+                    <div class="port-grid-price-sub">8X R$ 10,75</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis. </p>
                 </div>
             </div>
             <div class="col-md-3 port-grid lost wow zoomInRight animated">
-                <a href="portfolio.html"><img src="images/p4.jpg" class="img-responsive" alt="" /></a>
-                <div class="box_type">R$100,00</div>
-                <!--                <div class="box-hover">
-                                    <ul class="port-icons">
-                                        <li><i class="per"></i></li>
-                                        <li><i class="loca"></i></li>
-                                    </ul>
-                                </div>-->
+                <a class="inline" href="#inline_content"><img src="images/p4.jpg" class="img-responsive" alt="" /></a>
+                <div class="text">
+                    <a class="inline" href="#inline_content"><h3>I am an amazing project</h3></a>
+                    <div class="port-grid-price">R$86,00</div>
+                    <div class="port-grid-price-sub">8X R$ 10,75</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis. </p>
+                </div>
+            </div>
+
+            <div class="col-md-3 port-grid wow zoomInLeft animated">
+                <a class="inline" href="#inline_content"><img src="images/p1.jpg" class="img-responsive" alt="" /></a>
+                <div class="text">
+                    <a class="inline" href="#inline_content"><h3>I am an amazing project</h3></a>
+                    <div class="port-grid-price">R$86,00</div>
+                    <div class="port-grid-price-sub">8X R$ 10,75</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis. </p>
+                </div>
+            </div>
+            <div class="col-md-3 port-grid wow zoomInLeft animated" >
+                <a class="inline" href="#inline_content"><img src="images/p2.jpg" class="img-responsive" alt="" /></a>
+                <div class="text">
+                    <a class="inline" href="#inline_content"><h3>I am an amazing project</h3></a>
+                    <div class="port-grid-price">R$86,00</div>
+                    <div class="port-grid-price-sub">8X R$ 10,75</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis. </p>
+                </div>
+            </div>
+            <div class="col-md-3 port-grid wow zoomInRight animated">
+                <a class="inline" href="#inline_content"><img src="images/p3.jpg" class="img-responsive" alt="" /></a>
+                <div class="text">
+                    <a class="inline" href="#inline_content"><h3>I am an amazing project</h3></a>
+                    <div class="port-grid-price">R$86,00</div>
+                    <div class="port-grid-price-sub">8X R$ 10,75</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis. </p>
+                </div>
+            </div>
+            <div class="col-md-3 port-grid lost wow zoomInRight animated">
+                <a class="inline" href="#inline_content"><img src="images/p4.jpg" class="img-responsive" alt="" /></a>
+                <div class="text">
+                    <a class="inline" href="#inline_content"><h3>I am an amazing project</h3></a>
+                    <div class="port-grid-price">R$86,00</div>
+                    <div class="port-grid-price-sub">8X R$ 10,75</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis. </p>
+                </div>
+            </div>
+
+            <div class="col-md-3 port-grid wow zoomInLeft animated">
+                <a class="inline" href="#inline_content"><img src="images/p1.jpg" class="img-responsive" alt="" /></a>
                 <div class="text">
                     <a href="portfolio.html"><h3>I am an amazing project</h3></a>
+                    <div class="port-grid-price">R$86,00</div>
+                    <div class="port-grid-price-sub">8X R$ 10,75</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis. </p>
+                </div>
+            </div>
+            <div class="col-md-3 port-grid wow zoomInLeft animated" >
+                <a class="inline" href="#inline_content"><img src="images/p2.jpg" class="img-responsive" alt="" /></a>
+                <div class="text">
+                    <a href="portfolio.html"><h3>I am an amazing project</h3></a>
+                    <div class="port-grid-price">R$86,00</div>
+                    <div class="port-grid-price-sub">8X R$ 10,75</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis. </p>
+                </div>
+            </div>
+            <div class="col-md-3 port-grid wow zoomInRight animated">
+                <a class="inline" href="#inline_content"><img src="images/p3.jpg" class="img-responsive" alt="" /></a>
+                <div class="text">
+                    <a class="inline" href="#inline_content"><h3>I am an amazing project</h3></a>
+                    <div class="port-grid-price">R$86,00</div>
+                    <div class="port-grid-price-sub">8X R$ 10,75</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis. </p>
+                </div>
+            </div>
+            <div class="col-md-3 port-grid lost wow zoomInRight animated">
+                <a class="inline" href="#inline_content"><img src="images/p4.jpg" class="img-responsive" alt="" /></a>
+                <div class="text">
+                    <a class="inline" href="#inline_content"><h3>I am an amazing project</h3></a>
+                    <div class="port-grid-price">R$86,00</div>
+                    <div class="port-grid-price-sub">8X R$ 10,75</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis. </p>
                 </div>
             </div>
             <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<div style='display:none'>
+    <div id='inline_content' style='padding:10px; background:#fff;'>
+        <img src="images/img1.jpg" class="img-responsive" alt="" width="100%" />
+        <div class="text">
+            <h2>I am an amazing project ipsum dolor</h2>
+            <div>
+                <strong style="font-size: 18px">R$86,00</strong>
+                <span>8X R$ 10,75</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.</p>
         </div>
     </div>
 </div>

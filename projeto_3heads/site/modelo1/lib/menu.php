@@ -10,8 +10,8 @@
                 <li><a class="scroll" href="#sobre" data-hover="QUEM SOMOS">QUEM SOMOS</a></li>
                 <li><a class="scroll" href="#servicos" data-hover="SERVIÇOS">SERVIÇOS</a></li>
                 <li><a class="scroll" href="#produtos" data-hover="PRODUTOS">PRODUTOS</a></li>
-                <li><a class="scroll" href="#clientes" data-hover="CLIENTES">CLIENTES</a></li>
                 <li><a class="scroll" href="#parceiros" data-hover="PARCEIROS">PARCEIROS</a></li>
+                <li><a class="scroll" href="#clientes" data-hover="CLIENTES">CLIENTES</a></li>
                 <li><a class="scroll" href="#portfolio" data-hover="PORTFOLIO">PORTFOLIO</a></li>
                 <li><a class="scroll" href="#contato" data-hover="CONTATO">CONTATO</a></li>
 

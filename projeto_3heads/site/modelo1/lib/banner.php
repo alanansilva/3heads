@@ -1,64 +1,87 @@
 <!-- banner-slider -->
-<div id="home" class="banner-slider">
-    <!-- responsiveslides -->
-    <script src="js/responsiveslides.min.js"></script>
-    <script>
-                // You can also use "$(window).load(function() {"
-                $(function () {
-                    // Slideshow 4
-                    $("#slider3").responsiveSlides({
-                        auto: true,
-                        pager: true,
-                        nav: false,
-                        speed: 500,
-                        namespace: "callbacks",
-                        before: function () {
-                            $('.events').append("<li>before event fired.</li>");
-                        },
-                        after: function () {
-                            $('.events').append("<li>after event fired.</li>");
-                        }
-                    });
-                });
-    </script>
-    <!-- responsiveslides -->
+<script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
+<link href="js/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+<style>
+    /* Início Galeria bxslider index geral */
+    .galeria_bxslider_full_ger .bx-wrapper{
+        margin: 0 auto 30px !important;
+    }
+    .galeria_bxslider_full_ger .bx-wrapper img{
+        width: 100%;
+    }
+    .galeria_bxslider_full_ger .bx-viewport{
+        box-shadow: none !important;
+        border: none !important;
+    }
+    .galeria_bxslider_full_ger{
+        position: relative;
+    }
+    .galeria_bxslider_full_sup_btns{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+    }
+    .galeria_bxslider_full_sup_btns #galeria_bxslider_sup_btn_esq{
+        position: absolute;
+        left: 20px;
+    }
+    .galeria_bxslider_full_sup_btns #galeria_bxslider_sup_btn_dir{
+        position: absolute;
+        right: 20px;
+    }
+    .galeria_bxslider_full_sup_btns i{
+        font-size: 40px;
+        color: #03BEF0;
+    }
+    .galeria_bxslider_full_ger .bx-controls{
+        position: relative;
+        top: -50px;
+    }
+    .galeria_bxslider_full_ger .bx-wrapper .bx-pager.bx-default-pager a:hover, .galeria_bxslider_full_ger .bx-wrapper .bx-pager.bx-default-pager a.active{
+        background: #03BEF0;
+    }
+    .galeria_bxslider_full_ger .bx-wrapper .bx-viewport{
+        left: 0;
+    }
+    /* Fim Galeria bxslider index geral */
+</style>
+<script>
+    $(document).ready(function () {
+        $('.galeria_bxslider_full_sup').bxSlider({
+            adaptiveHeight: true,
+            nextSelector: '#galeria_bxslider_sup_btn_dir',
+            prevSelector: '#galeria_bxslider_sup_btn_esq',
+            nextText: '<i class="glyphicon glyphicon-menu-right"></i>',
+            prevText: '<i class="glyphicon glyphicon-menu-left"></i>'
+        });
+    });
+</script>
+<!--<div id="home" class="banner-slider">-->
+<div id="home">
     <div id="top" class="callbacks_container">
-        <ul class="rslides" id="slider3">
-
-            <li>
-                <div class="banner">
-                    <div class="container">
-                        <div class="banner-info">
-                            <h3>FIND EVERYTHING YOU WANTED
-                                TO KNOW ABOUT BUSINESS</h3>
-                            <p>Sed ut perspiciatis unde omnis iste natus error 
-                                sit voluptatem accusantium doloremque laudantium, 
-                                totam rem aperiam, eaque ipsa quae ab illo inventore
-                                veritatis et quasi architecto beatae vitae dicta 
-                                sunt explicabo. </p>
-                            <a class="scroll" href="#about"><img src="images/arrow.png" alt=""/></a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="banner">
-
-                    <div class="container">
-                        <div class="banner-info">
-                            <h3>SMART BUSINESS SOLUTIONS
-                                THAT YOU NEED</h3>
-                            <p>Sed ut perspiciatis unde omnis iste natus error 
-                                sit voluptatem accusantium doloremque laudantium, 
-                                totam rem aperiam, eaque ipsa quae ab illo inventore
-                                veritatis et quasi architecto beatae vitae dicta 
-                                sunt explicabo. </p>
-                            <a class="scroll" href="#about"><img src="images/arrow.png" alt=""/></a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <div class="galeria_bxslider_full_ger">
+            <ul class="galeria_bxslider_full_sup">
+                <li>
+                    <img src="images/banner1.jpg" />
+                </li>
+                <li>
+                    <img src="images/banner1.jpg" />
+                </li>
+                <li>
+                    <img src="images/banner1.jpg" />
+                </li>
+                <li>
+                    <img src="images/banner1.jpg" />
+                </li>
+                <li>
+                    <img src="images/banner1.jpg" />
+                </li>
+            </ul>
+            <div class="galeria_bxslider_full_sup_btns">
+                <span id="galeria_bxslider_sup_btn_esq"></span>
+                <span id="galeria_bxslider_sup_btn_dir"></span>
+            </div>
+        </div>
     </div>
 </div>
 <div class="clearfix"></div>
