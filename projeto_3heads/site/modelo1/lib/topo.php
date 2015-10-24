@@ -1,9 +1,9 @@
 
 <?php
 //error_reporting(E_ALL);
-//ini_set('display_errors', 0);
-require_once 'lib/conn.php';
+//ini_set('display_errors', 1);
 
+require_once 'lib/conn.php';
 require_once '../../sis_3heads/models/Pessoa.php';
 require_once '../../sis_3heads/models/Banner.php';
 require_once '../../sis_3heads/models/BannerCategoria.php';
@@ -25,6 +25,8 @@ $menu = new Menu();
 $perfil = new Perfil();
 $tipoPessoa = new TipoPessoa();
 $usuario = new Usuario();
+
+define('PESSOA_ID', 1);
 ?>
 <!--
 Author: W3layouts

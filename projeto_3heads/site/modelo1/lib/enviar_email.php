@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 header("Content-Type: text/html;  charset=ISO-8859-1", true);
 ob_start();
 
@@ -9,8 +11,7 @@ $mail = new PHPMailer();
 
 extract($_REQUEST);
 
-
-UtilString::print_pre($_REQUEST);
+UtilString::pr($_REQUEST);
 ?>
 <table>
     <tr>
@@ -18,7 +19,7 @@ UtilString::print_pre($_REQUEST);
             Nome:
         </td>
         <td>
-            <?php echo $nome_enviar_email ?>
+            <?php echo a ?>
         </td>
     </tr>
     <tr>
@@ -26,7 +27,7 @@ UtilString::print_pre($_REQUEST);
             E-mail:
         </td>
         <td>
-            <?php echo $email_enviar_email ?>
+            <?php echo  a?>
         </td>
     </tr>
     <tr>
@@ -34,7 +35,7 @@ UtilString::print_pre($_REQUEST);
             Assunto:
         </td>
         <td>
-            <?php echo $assunto_enviar_email ?>
+            <?php echo a  ?>
         </td>
     </tr>
     <tr>
@@ -42,7 +43,7 @@ UtilString::print_pre($_REQUEST);
             Mensagem:
         </td>
         <td>
-            <?php echo $mensagem_enviar_email ?>
+            <?php echo dd ?>
         </td>
     </tr>
 <!--    <tr>
@@ -57,18 +58,18 @@ UtilString::print_pre($_REQUEST);
     </tr>-->
 </table>
 <?php
-$content = ob_get_clean();
+//$content = ob_get_clean();
 
+$host = "webmail.motor-reserva.com.br";
+$userName = "mensagens@motor-reserva.com.br";
+$password = "F0c0_@#123**_.";
+$from = "mensagens@motor-reserva.com.br";
 
 //$host     = "mail.meusitenaweb.com.br";
 //$userName = "formulario@meusitenaweb.com.br";
 //$password = "formulario!@foco#";
 //$from     = "formulario@meusitenaweb.com.br";
 
-$host     = "mail.yahoo.com";
-$userName = "alana_silva@yahoo.com";
-$password = "GuiGui247558";
-$from     = "alana_silva@yahoo.com";
 
 $mail->IsSMTP(); // send via SMTP
 $mail->SMTPAuth = true; // 'true' para autenticacao
@@ -87,10 +88,14 @@ $mail->AddAddress('alanansilva@gmail.com');
 $mail->WordWrap = 64; // Definicao de quebra de linha
 $mail->IsHTML(true); // envio como HTML se 'true'
 
-$mail->Subject = $assunto_enviar_email;
 
+$content = ob_get_contents();
+ob_get_clean();
+//die($content);
+
+$mail->Subject = 'Solicitação de reserva';
 $mail->Body = $content;
-
+die ($content);
 if (!$mail->Send())
     die($mail->ErrorInfo);
 else

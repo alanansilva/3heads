@@ -1,6 +1,7 @@
 <!-- get-in -->
 <?php
 $objPessoa = $pessoa->getPessoa();
+UtilString::pr($_SESSION);
 ?>
 <div id="contato" class="get-in-touch">
     <div class="container">
@@ -11,11 +12,8 @@ $objPessoa = $pessoa->getPessoa();
         </div>
     </div>
     <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2482.432383990807!2d0.028213999961443994!3d51.52362882484525!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1423469959819"></iframe>
+        <iframe src="<?php echo $objPessoa['mapa_localizacao']?> " width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
-<!--         <span>
-                                <iframe src="<?php echo $_SESSION['dados']['config']['rede']['mapa_localizacao'] ?>" scrolling="no" style="border:none; overflow:hidden; width:100%; height:232px;" allowtransparency="true" frameborder="0"></iframe>
-                            </span>-->
 </div>
 <!-- //get-in -->
 <!-- contact-us -->
@@ -37,7 +35,7 @@ $objPessoa = $pessoa->getPessoa();
             <div class="clearfix"></div>
         </div>
         <div class="contact-info">
-            <form id="enviar_email" name="enviar_email" action="../lib/enviar_email.php" method="POST">
+            <form id="enviar_email" name="enviar_email" action="lib/enviar_email.php" method="post">
                 <input type="text" placeholder="Seu nome" required>
                 <input type="text" placeholder="Seu e-mail" required>
                 <input type="text" placeholder="Assunto" required>
