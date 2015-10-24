@@ -11,20 +11,34 @@ $link = 'app.php?app=' . $app;
 
 <script>
     $(document).ready(function () {
-        $("#conteudo_categoria_id").change(function(){
+        $("#conteudo_categoria_id").change(function () {
             console.log($(this).val());
-            if ($(this).val() == 4){
+            if ($(this).val() == 4) {
                 $(".configuracao_equipe").show();
                 $(".configuracao_equipe_2").hide();
-            }else{
+            } else {
                 $(".configuracao_equipe").hide();
                 $(".configuracao_equipe_2").show();
             }
         });
-        
+
         $('#form_conteudo').validate({
-         
-              submitHandler: function(form) {
+            rules: {
+                titulo: {
+                    minlength: 2,
+                    required: true
+                }
+            }, //end rules     
+            messages: {
+                titulo: 'Preencha o campo Titulo',
+                subtitulo: 'Preencha o campo Subtitulo',
+                descricao: 'Preencha o campo Descricao',
+                descricao_breve: 'Preencha o campo Descricao_breve',
+                ordem: 'Preencha o campo Ordem',
+                ativo: 'Preencha o campo Ativo',
+                valor: 'Preencha o campo Valor'
+            },
+            submitHandler: function (form) {
                 var msg;
 
                 if ($('input[name=acao]').val() == 1)
@@ -34,16 +48,6 @@ $link = 'app.php?app=' . $app;
 
                 $.getMsgAjaxSubmitFormUpload(msg, form, "<?php echo $pathApp . $app . "/persistence.php" ?>");
                 return false;
-            },
-            messages: {
-                conteudo_categoria_id: 'Preencha o campo Conteudo_categoria_id',
-                titulo: 'Preencha o campo Titulo',
-                subtitulo: 'Preencha o campo Subtitulo',
-                descricao: 'Preencha o campo Descricao',
-                descricao_breve: 'Preencha o campo Descricao_breve',
-                ordem: 'Preencha o campo Ordem',
-                ativo: 'Preencha o campo Ativo',
-                valor: 'Preencha o campo Valor'
             },
             highlight: function (element) {
                 $(element).closest('.control-group').removeClass('success').addClass('error');

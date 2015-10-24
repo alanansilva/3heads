@@ -1,7 +1,7 @@
 <!--services--> 
-<div class="services" id="servicos">
+<div id="servicos" class="mod_cat">
     <div class="container">
-        <div class="sevices-main">
+        <div class="title_cat">
             <div class="ser-top">
                 <h3>Serviços</h3>
                 <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria 

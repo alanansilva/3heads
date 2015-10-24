@@ -1,7 +1,7 @@
-<!-- banner-slider -->
-<div id="clientes" class="clientes" style="padding: 80px 0px;">
+<!-- clientes -->
+<div id="clientes" class="mod_cat">
     <div class="container">
-        <div class="about-header">
+        <div class="title_cat">
             <h3>CLIENTES</h3>
         </div>
         <div class="nbs-flexisel-container">
@@ -83,4 +83,4 @@
     </div>
 </div>
 <div class="clearfix"></div>
-<!-- //banner-slider -->
+<!-- //clientes -->

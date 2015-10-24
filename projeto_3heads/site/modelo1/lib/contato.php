@@ -1,8 +1,8 @@
-<!-- get-in -->
+<!-- contato -->
 <?php
 $objPessoa = $pessoa->getPessoa();
 ?>
-<div id="contato" class="get-in-touch">
+<div id="contato" class="mod_cat">
     <div class="container">
         <div class="get-info text-center">
             <h3>CONTATO</h3>
@@ -17,8 +17,7 @@ $objPessoa = $pessoa->getPessoa();
                                 <iframe src="<?php echo $_SESSION['dados']['config']['rede']['mapa_localizacao'] ?>" scrolling="no" style="border:none; overflow:hidden; width:100%; height:232px;" allowtransparency="true" frameborder="0"></iframe>
                             </span>-->
 </div>
-<!-- //get-in -->
-<!-- contact-us -->
+
 <div class="contact-us">
     <div class="container">
         <div class="contact-grids">
@@ -47,4 +46,4 @@ $objPessoa = $pessoa->getPessoa();
         </div>
     </div>
 </div>
-<!-- //contact-us -->
+<!-- //contato -->

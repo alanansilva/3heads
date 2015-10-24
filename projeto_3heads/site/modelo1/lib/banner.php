@@ -4,7 +4,7 @@
 <style>
     /* Início Galeria bxslider index geral */
     .galeria_bxslider_full_ger .bx-wrapper{
-        margin: 0 auto 30px !important;
+        margin: 0 auto !important;
     }
     .galeria_bxslider_full_ger .bx-wrapper img{
         width: 100%;
