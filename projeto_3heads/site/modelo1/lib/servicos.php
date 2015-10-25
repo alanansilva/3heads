@@ -23,8 +23,8 @@
                 <?php
             }
             ?>
-            <!--<div class="col-md-4 ser-grid">-->
-<!--                            <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+<!--            <div class="col-md-4 ser-grid">
+                            <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
                 <h4>Lorem Ipsum</h4>
                 <span class="ser-gridline"> </span>
                 <p>simplesmente uma simulação de texto da indústria tipográfica.</p>

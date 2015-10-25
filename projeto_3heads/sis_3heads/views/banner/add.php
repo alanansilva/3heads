@@ -48,6 +48,14 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="icone">TV</label>
+                        <input type="file" name='tv[]' id='tv' multiple=""/>
+                    </div>
+                </div>                
+            </div>
+            <div class="row">
                 <div class="col-md-12">
                     <label for="descricao">Descricao</label>
                     <textarea class="ckeditor" id="descricao" name="descricao"></textarea>

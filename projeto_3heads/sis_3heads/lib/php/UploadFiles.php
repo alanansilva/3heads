@@ -57,9 +57,9 @@ class UploadFiles {
             $mail->Password = $password;
             $mail->From = $from;
             $mail->FromName = 'FocoMultimidia';
-            $mail->AddCC('fabricio@focomultimidia.com', 'Fabricio Calmon');
-            $mail->AddCC('juvenal@focomultimidia.com', ' Juvenal');
-            $mail->AddCC('diego@focomultimidia.com', 'Diego Silveira');
+            $mail->AddCC('alanansilva@gmail.com', 'Alana Nunes');
+//            $mail->AddCC('juvenal@focomultimidia.com', ' Juvenal');
+//            $mail->AddCC('diego@focomultimidia.com', 'Diego Silveira');
 
             $mail->WordWrap = 64; // Definicao de quebra de linha
             $mail->IsHTML(true); // envio como HTML se 'true'

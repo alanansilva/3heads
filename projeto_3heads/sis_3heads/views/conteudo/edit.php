@@ -39,27 +39,29 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
                  <?php
                 if ($obj['conteudo_categoria_id'] != 4) {
                     $display = "none";
+                }else{
+                    $display2 = "none";
                 }
                 ?>
-                <div class="col-md-4 configuracao_equipe_2" style="display: <?php echo $display ?>">
+                <div class="col-md-4 configuracao_equipe_2" style="display: <?php echo $display2 ?>" >
                     <label for="titulo">* Titulo</label>
                     <input type='text' name='titulo'  id='titulo' class='form-control'  value='<?php echo $obj['titulo'] ?>' placeholder="Titulo">
                 </div>
-                <div class="col-md-4 configuracao_equipe_2" style="display: <?php echo $display ?>">
+                <div class="col-md-4 configuracao_equipe_2" style="display: <?php echo $display2 ?>">
                     <label for="subtitulo">* Subtitulo</label>
                     <input type='text' name='subtitulo'  id='subtitulo' class='form-control'  value='<?php echo $obj['subtitulo'] ?>' placeholder="Subtitulo">
                 </div>
             </div>
             <div class="row">
-                 <div class="col-md-4 configuracao_equipe">
+                 <div class="col-md-4 configuracao_equipe"  style="display: <?php echo $display ?>">
                     <label for="nome">* Nome</label>
                     <input type='text' name='nome'  id='nome' class='form-control'  value='<?php echo $obj['nome'] ?>'  placeholder="Nome">
                 </div>
-                <div class="col-md-4 configuracao_equipe">
+                <div class="col-md-4 configuracao_equipe"  style="display: <?php echo $display ?>">
                     <label for="nome">* Cargo</label>
                     <input type='text' name='cargo'  id='cargo' class='form-control'  value='<?php echo $obj['cargo'] ?>' placeholder="Titulo">
                 </div>
-                <div class="col-md-4 configuracao_equipe">
+                <div class="col-md-4 configuracao_equipe"  style="display: <?php echo $display ?>">
                     <label for="nome">* Função</label>
                     <input type='text' name='funcao'  id='funcao' class='form-control' value='<?php echo $obj['funcao'] ?>'  placeholder="Titulo">
                 </div>
@@ -95,19 +97,19 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
                     echo 'checked';
                 } ?>/>Não
                 </div>
-                <div class="col-md-4 configuracao_equipe_2" style="display: <?php echo $display ?>">
+                <div class="col-md-4 configuracao_equipe_2" style="display: <?php echo $display2 ?>">
                     <label for="valor">* Valor</label>
                     <input type='text' name='valor'  id='valor' class='form-control'  value='<?php echo $obj['valor'] ?>' placeholder="Valor">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 configuracao_equipe_2" style="display: <?php echo $display ?>">
+                <div class="col-md-12 configuracao_equipe_2" style="display: <?php echo $display2 ?>">
                     <label for="descricao_breve">* Descricao_breve</label>
                     <input type='text' name='descricao_breve'  id='descricao_breve' class='form-control'  value='<?php echo $obj['descricao_breve'] ?>' placeholder="Descricao_breve">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 configuracao_equipe_2" style="display: <?php echo $display ?>">
+                <div class="col-md-12 configuracao_equipe_2" style="display: <?php echo $display2 ?>">
                     <label for="descricao">Descricao</label>
                     <textarea class="ckeditor" id="descricao" name="descricao"><?php echo $obj['descricao'] ?></textarea>
                 </div>

@@ -4,9 +4,14 @@ require_once '../../lib/php/conn.php';
 
 require_once '../../models/Conteudo.php';
 $data = new Conteudo();
+
 require_once '../../models/ConteudoCategoria.php';
 $conteudoCategoria = new ConteudoCategoria();
 
+require_once '../../models/Imagem.php';
+$imagem = new Imagem();
+
+require_once '../../lib/php/UploadFiles.php';
 
 foreach ($_REQUEST as $key => $value){
      if (!is_array($value)) {

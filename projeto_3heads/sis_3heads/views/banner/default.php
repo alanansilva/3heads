@@ -1,10 +1,16 @@
 <?php
+//error_reporting(E_ALL);
 //ini_set('display_errors', 1);
-
 require_once '../../models/Banner.php';
 $data = new Banner();
+
 require_once '../../models/BannerCategoria.php';
 $bannerCategoria = new BannerCategoria();
+
+require_once '../../models/Imagem.php';
+$imagem = new Imagem();
+
+require_once '../../lib/php/UploadFiles.php';
 
 $link = 'app.php?app=' . $app;
 ?>
@@ -29,7 +35,7 @@ $link = 'app.php?app=' . $app;
                     required: true
                 }
             }, //end rules
-            submitHandler: function (form) {
+             submitHandler: function(form) {
                 var msg;
 
                 if ($('input[name=acao]').val() == 1)

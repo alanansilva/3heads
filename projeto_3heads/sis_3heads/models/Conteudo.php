@@ -22,10 +22,10 @@ class Conteudo {
             $sql.= ")";
             $sql.= "VALUES (";
             $sql.= "'" . $conteudo_categoria_id . "',";
-            $sql.= "'" . $titulo . "',";
-            $sql.= "'" . $subtitulo . "',";
-            $sql.= "'" . $descricao . "',";
-            $sql.= "'" . $descricao_breve . "',";
+            $sql.= "'" . utf8_decode($titulo) . "',";
+            $sql.= "'" . utf8_decode($subtitulo) . "',";
+            $sql.= "'" . utf8_decode($descricao) . "',";
+            $sql.= "'" . utf8_decode($descricao_breve) . "',";
             $sql.= "'" . $ordem . "',";
             $sql.= "'" . $ativo . "',";
             $sql.= "'" . $valor . "',";
@@ -53,10 +53,10 @@ class Conteudo {
 
             $sql = "UPDATE conteudo SET";
             $sql.= " conteudo_categoria_id = '" . $conteudo_categoria_id . "',";
-            $sql.= " titulo = '" . $titulo . "',";
-            $sql.= " subtitulo = '" . $subtitulo . "',";
-            $sql.= " descricao = '" . $descricao . "',";
-            $sql.= " descricao_breve = '" . $descricao_breve . "',";
+            $sql.= " titulo = '" . utf8_decode($titulo) . "',";
+            $sql.= " subtitulo = '" . utf8_decode($subtitulo) . "',";
+            $sql.= " descricao = '" . utf8_decode($descricao) . "',";
+            $sql.= " descricao_breve = '" . utf8_decode($descricao_breve) . "',";
             $sql.= " ordem = '" . $ordem . "',";
             $sql.= " ativo = '" . $ativo . "',";
             $sql.= " valor = '" . $valor . "',";

@@ -7,6 +7,8 @@ ob_start();
 session_start();
 require_once 'session.php';
 
+require_once 'UploadFiles.php';
+require_once 'PostFileCURL.php';
 
 $host = "mail.meusitenaweb.com.br";
 $userName = "formulario@meusitenaweb.com.br";

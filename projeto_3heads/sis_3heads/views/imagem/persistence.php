@@ -6,7 +6,9 @@ require_once '../../models/Imagem.php';
 $data = new Imagem();
 require_once '../../models/Menu.php';
 $menu = new Menu();
+require_once '../../lib/php/upload.php';
 
+require_once '../../lib/php/UploadFiles.php';
 
 foreach ($_REQUEST as $key => $value){
      if (!is_array($value)) {

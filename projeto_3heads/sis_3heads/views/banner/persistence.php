@@ -2,11 +2,17 @@
 header('Content-type: application/json;  charset=iso-8859-1', true);
 require_once '../../lib/php/conn.php';
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once '../../models/Banner.php';
 $data = new Banner();
+
 require_once '../../models/BannerCategoria.php';
 $bannerCategoria = new BannerCategoria();
 
+require_once '../../models/Imagem.php';
+$imagem = new Imagem();
 
 foreach ($_REQUEST as $key => $value){
      if (!is_array($value)) {

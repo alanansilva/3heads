@@ -14,6 +14,8 @@ require_once '../../sis_3heads/models/Menu.php';
 require_once '../../sis_3heads/models/Perfil.php';
 require_once '../../sis_3heads/models/TipoPessoa.php';
 require_once '../../sis_3heads/models/Usuario.php';
+require_once '../../sis_3heads/lib/php/PostFileCURL.php';
+require_once '../../sis_3heads/lib/php/UploadFiles.php';
 
 $pessoa = new Pessoa();
 $banner = new Banner();
@@ -39,6 +41,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <head>
         <title>.:: Modelo 1 ::.</title>
         <!--fonts-->
+  
         <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
               rel='stylesheet' type='text/css'>
@@ -69,5 +72,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             });
         </script>
         <!-- start-smoth-scrolling -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.min.js"></script>
+
+<!--        <link rel="stylesheet" type="text/css" href="../../sis_3heads/lib/js/validate/css/style.css" />
+        <script src="../../sis_3heads/lib/js/validate/assets/js/jquery.validate.min.js"></script>-->
+
+        
     </head>
     <body>

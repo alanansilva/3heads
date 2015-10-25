@@ -12,7 +12,7 @@
                 <h3><span>Quem somos nós?</span> <?php echo $objConteudo['titulo'] ?></h3>
             </div>
             <div class="col-md-6 testi-grid">
-                <p><?php echo $objConteudo['descricao'] ?> </p>
+                <p><?php echo utf8_decode($objConteudo['descricao']) ?> </p>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -29,7 +29,7 @@ $objConteudo = $conteudo->getConteudo(null, 4);
         <div class="about-grids">
             <div class="col-md-5 about-left">
                 <p>
-                    <?php echo $objConteudo['descricao_breve'] ?>
+                    <?php echo utf8_decode($objConteudo['descricao_breve']) ?>
                 </p>
                 <div class="buttonone"><a class="hvr-bounce-to-bottom morebtn text-right" href="#">Mais</a></div>
             </div>
