@@ -1,9 +1,9 @@
-<!-- get-in -->
+<!-- contato -->
 <?php
 $objPessoa = $pessoa->getPessoa();
 UtilString::pr($_SESSION);
 ?>
-<div id="contato" class="get-in-touch">
+<div id="contato" class="mod_cat">
     <div class="container">
         <div class="get-info text-center">
             <h3>CONTATO</h3>
@@ -15,8 +15,7 @@ UtilString::pr($_SESSION);
         <iframe src="<?php echo $objPessoa['mapa_localizacao']?> " width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
 </div>
-<!-- //get-in -->
-<!-- contact-us -->
+
 <div class="contact-us">
     <div class="container">
         <div class="contact-grids">
@@ -45,4 +44,4 @@ UtilString::pr($_SESSION);
         </div>
     </div>
 </div>
-<!-- //contact-us -->
+<!-- //contato -->

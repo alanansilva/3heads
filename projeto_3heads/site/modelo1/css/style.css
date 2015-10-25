@@ -3,6 +3,8 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+
+/*-- CSS Reset --*/
 body{
     font-family: 'Open Sans', sans-serif !important;
     margin:0;
@@ -26,8 +28,21 @@ ul{
     margin:0;
     padding:0;
 }
-
-/* Kumya */
+/*-- //CSS Reset --*/
+/*-- Geral --*/
+.title_cat h3{
+    margin-bottom:50px;
+    color:#03BEF0;
+    font-size:36px;
+    text-align:center;
+    font-family: 'Roboto Slab', serif;
+}
+.mod_cat{
+    padding:80px 0;
+}
+.grids_cat{}
+/*-- //Geral --*/
+/*-- Kumya --*/
 .link--kumya {
     font-size: 6.5em;
     overflow: hidden;
@@ -76,12 +91,10 @@ ul{
     -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
     transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 }
-
 .link--kumya:hover span::before {
     width: 100%;
 }
-
-/*-- kumya --*/
+/*-- //kumya --*/
 /*-- Effect 11 --*/
 .cl-effect-11 a {
     margin: 0 14px;
@@ -432,6 +445,7 @@ a.callbacks_nav.callbacks2_nav.next {
     display:none;
 }
 /*-- //menu --*/
+/*-- banner --*/
 .banner-info h3{
     font-weight:300;
     color:#fff;
@@ -455,10 +469,16 @@ a.callbacks_nav.callbacks2_nav.next {
     border:1px solid #000;
     padding:10px 10px;
 }
-/*-- testi --*/
-.testi{
-    padding:80px 0;
+.gallery h3{
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    color: #03BEF0;
+    font-size: 36px;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
 }
+/*-- //banner --*/
+/*-- testi --*/
 .testi-grid h3{
     width: 70%;
     line-height:1.6em;
@@ -474,18 +494,11 @@ a.callbacks_nav.callbacks2_nav.next {
     color:#757575;
     line-height:2em;
 }
-/*-- testi --*/
+/*-- //testi --*/
 /*-- about --*/
 .about{
     padding:80px 0;
     background:#eeeeee;
-}
-.about-header h3{
-    margin-bottom:50px;
-    color:#03BEF0;
-    font-size:36px;
-    text-align:center;
-    font-family: 'Roboto Slab', serif;
 }
 .about-left p{
     text-align:right;
@@ -520,7 +533,7 @@ a.callbacks_nav.callbacks2_nav.next {
     color:#757575;
 }
 /*-- //about --*/
-/* Bounce To Bottom */
+/*-- Bounce To Bottom --*/
 .hvr-bounce-to-bottom {
     display: inline-block;
     vertical-align: middle;
@@ -565,6 +578,7 @@ a.callbacks_nav.callbacks2_nav.next {
     -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
     transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
+/*-- //Bounce To Bottom --*/
 /*-- award --*/
 .award{
     padding:80px 0;
@@ -585,7 +599,7 @@ a.callbacks_nav.callbacks2_nav.next {
     margin: 20px 0 0px 0;
 }
 /*-- //award --*/
-/*--services start here--*/
+/*-- services --*/
 .services {
     background: #020202;
     padding: 80px 0;
@@ -663,8 +677,7 @@ span.ser-gridline {
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
 }
-
-/*--services end here--*/
+/*-- //services --*/
 /*-- gallery --*/
 div#portfolio {
     background: #eee;
@@ -706,9 +719,9 @@ div#portfolio {
     margin: 4.2em 0 0 0;
     text-align: center;
 }
-/*--//gallery--*/
+/*-- //gallery --*/
 /*-- client --*/
-/*--flexisel--*/
+/*-- flexisel --*/
 .flex-slider{	
     background:#222227;
     padding: 70px 0 165px 0;
@@ -750,7 +763,8 @@ div#portfolio {
     cursor: pointer;
     position: relative;
 }
-/*---- Nav ---*/
+/*-- //flexisel --*/
+/*-- Nav --*/
 .nbs-flexisel-nav-left, .nbs-flexisel-nav-right {
     width:60px;
     height:115px;
@@ -758,18 +772,10 @@ div#portfolio {
     cursor: pointer;
     z-index: 100;
 }
+/*-- //Nav --*/
 /*-- //client --*/
-.gallery h3{
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    color: #03BEF0;
-    font-size: 36px;
-    text-align: center;
-    font-family: 'Roboto Slab', serif;
-}
 /*-- get-in --*/
 .get-in-touch{
-
     padding:80px 0;
 }
 .get-info h3{
@@ -863,7 +869,7 @@ div#portfolio {
     font-size: 37px;
     color: #020202; 
 }
-/*-- get-in --*/
+/*-- //get-in --*/
 /*-- copy --*/
 .copy-right{
     background:#020202;
@@ -882,7 +888,7 @@ div#portfolio {
 .copy-right p a:hover{
     color:#03BEF0;
 }
-/*-- copy --*/
+/*-- //copy --*/
 /*-- to-top --*/
 #toTop {
     display: none;
@@ -938,14 +944,14 @@ div#portfolio {
     .banner-slider {
         min-height: 590px;
     }
-    .testi,.award ,.about,.services,div#portfolio,.get-in-touch,.contact-us{
+    .mod_cat {
         padding: 60px 0;
     }
     .banner-info p {
         line-height:1.8em;
         font-size: 13px;
     }
-    .about-header h3,.ser-top h3,.gallery h3 ,.get-info h3{
+    .title_cat h3 {
         font-size: 32px;
     }
     .testi-grid p {
@@ -1085,7 +1091,7 @@ div#portfolio {
         float: left;
         width: 50%;
     }
-    .about-header h3 {
+    .title_cat h3 {
         margin-bottom: 30px;
     }
     .testi-grid h3 {
@@ -1094,7 +1100,7 @@ div#portfolio {
     .testi-grid h3 {
         font-size: 24px;
     }
-    .about-header h3, .ser-top h3, .gallery h3, .get-info h3 {
+    .title_cat h3 {
         font-size: 28px;
     }
     .about-left,.about-right{
@@ -1213,7 +1219,7 @@ div#portfolio {
     .banner-info p {
         margin: 11px 0 28px 0;
     }
-    .testi, .award, .about, .services, div#portfolio, .get-in-touch, .contact-us {
+    .mod_cat {
         padding: 50px 0;
     }
     .testi-grid h3 {
@@ -1260,7 +1266,7 @@ div#portfolio {
     .ser-grid {
         padding: 0px 5px;
     }
-    .about-header h3, .ser-top h3, .gallery h3, .get-info h3 {
+    .title_cat h3 {
         font-size: 26px;
     }
     .ser-grid .glyphicon-briefcase, .ser-grid .glyphicon-bullhorn, .ser-grid .glyphicon-pencil, .ser-grid .glyphicon-globe, .ser-grid .glyphicon-thumbs-up, .ser-grid .glyphicon-cog {
@@ -1336,13 +1342,13 @@ div#portfolio {
         padding: 0;
         margin-bottom: 25px;
     }
-    .testi, .award, .about, .services, div#portfolio, .get-in-touch, .contact-us {
+    .mod_cat {
         padding: 40px 0;
     }
     .testi-grid h3 {
         font-size: 19px;
     }
-    .about-header h3 {
+    .title_cat h3 {
         margin-bottom: 20px;
     }
     .testi-grid:nth-child(2) {
@@ -1402,7 +1408,7 @@ div#portfolio {
         padding: 0;
         margin-top: 25px;
     }
-    .about-header h3, .ser-top h3, .gallery h3, .get-info h3 {
+    .title_cat h3 {
         font-size: 25px;
     }
     .ser-top p {
@@ -1494,13 +1500,11 @@ div#portfolio {
     .banner-info {
         min-height: 243px;
     }
-    .testi, .award, .about, .services, div#portfolio, .get-in-touch, .contact-us {
+    .mod_cat {
         padding: 35px 0;
     }
-    .about-header h3, .ser-top h3, .gallery h3, .get-info h3 {
+    .title_cat h3 {
         font-size: 24px;
-    }
-    .about-header h3 {
         margin-bottom: 12px;
     }
     .testi-grid h3 {

@@ -1,7 +1,7 @@
-<!-- about -->
-<div id="sobre" class="testi">
+<!-- sobre -->
+<div id="sobre" class="mod_cat">
     <div class="container">
-        <div class="about-header">
+        <div class="title_cat">
             <h3>QUEM SOMOS</h3>
         </div>
         <?php
@@ -19,8 +19,6 @@
     </div>
 </div>
 <div class="clearfix"></div>
-<!-- //about -->
-<!-- testi -->
 
 <?php
 unset($objConteudo);
@@ -87,8 +85,7 @@ $objConteudo = $conteudo->getConteudo(null, 4);
         </div>
     </div>
 </div>
-<!-- //testi -->
-<!-- awarded -->
+
 <?php
 unset($objConteudo);
 $objConteudo = $conteudo->getConteudo(null, 3);
@@ -109,4 +106,4 @@ $objConteudo = $conteudo->getConteudo(null, 3);
         <p></p>
     </div>
 </div>
-<!-- //awarded -->
+<!-- //sobre -->
