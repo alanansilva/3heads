@@ -10,6 +10,7 @@
         <div class="title_cat">
             <h3>PORTFOLIO</h3>
         </div>
+        <div class="clearfix"></div>
         <section>
             <ul id="da-thumbs" class="da-thumbs">
                 <li>
@@ -96,4 +97,5 @@
         </script>
     </div>
 </div>
+<div class="clearfix"></div>
 <!-- //portfolio -->

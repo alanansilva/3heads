@@ -4,6 +4,7 @@
         <div class="title_cat">
             <h3>CLIENTES</h3>
         </div>
+        <div class="clearfix"></div>
         <div class="nbs-flexisel-container">
             <div class="nbs-flexisel-inner">
                 <ul id="flexiselDemo1" class="nbs-flexisel-ul" style="left: -228px; display: block;">			

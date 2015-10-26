@@ -1,5 +1,5 @@
 <!--services--> 
-<div id="servicos" class="mod_cat">
+<div id="servicos" class="mod_cat" style="background: #020202;">
     <div class="container">
         <div class="title_cat">
             <div class="ser-top">
@@ -54,8 +54,8 @@
                 <span class="ser-gridline"> </span>
                 <p>simplesmente uma simulação de texto da indústria tipográfica.</p>
             </div>-->
-            <div class="clearfix"> </div>			
         </div>
     </div>
 </div>
+<div class="clearfix"></div>
 <!--services end here-->

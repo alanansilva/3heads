@@ -21,17 +21,39 @@
         position: absolute;
         top: 50%;
     }
-    .galeria_bxslider_full_sup_btns #galeria_bxslider_sup_btn_esq{
+    .galeria_bxslider_full_sup_btns #galeria_bxslider_sup_btn_esq, .galeria_bxslider_full_sup_btns #galeria_bxslider_sup_btn_dir{
         position: absolute;
-        left: 20px;
+        width: 35px;
+        height: 60px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.50);
+        line-height: 68px;
+        margin: 0;
+        -webkit-transition: all 100ms ease;
+        -moz-transition: all 100ms ease;
+        -ms-transition: all 100ms ease;
+        -o-transition: all 100ms ease;
+        transition: all 100ms ease;
+    }
+    .galeria_bxslider_full_sup_btns #galeria_bxslider_sup_btn_esq:hover, .galeria_bxslider_full_sup_btns #galeria_bxslider_sup_btn_dir:hover{
+        background: rgba(0, 0, 0, 0.7);
+        -webkit-transition: all 100ms ease;
+        -moz-transition: all 100ms ease;
+        -ms-transition: all 100ms ease;
+        -o-transition: all 100ms ease;
+        transition: all 100ms ease;
+    }
+    .galeria_bxslider_full_sup_btns #galeria_bxslider_sup_btn_esq{
+        left: 0;
     }
     .galeria_bxslider_full_sup_btns #galeria_bxslider_sup_btn_dir{
-        position: absolute;
-        right: 20px;
+        right: 0;
     }
     .galeria_bxslider_full_sup_btns i{
-        font-size: 40px;
-        color: #03BEF0;
+        /*font-size: 40px;*/
+        font-size: 18px;
+        /*color: #03BEF0;*/
+        color: #FFF;
     }
     .galeria_bxslider_full_ger .bx-controls{
         position: relative;
@@ -48,12 +70,26 @@
 <script>
     $(document).ready(function () {
         $('.galeria_bxslider_full_sup').bxSlider({
+            auto: true,
+            autoHover: true,
             adaptiveHeight: true,
             nextSelector: '#galeria_bxslider_sup_btn_dir',
             prevSelector: '#galeria_bxslider_sup_btn_esq',
             nextText: '<i class="glyphicon glyphicon-menu-right"></i>',
             prevText: '<i class="glyphicon glyphicon-menu-left"></i>'
         });
+
+        $('.galeria_bxslider_full_ger').hover(
+                function () {
+                    $('#galeria_bxslider_sup_btn_esq, #galeria_bxslider_sup_btn_dir').fadeIn('fast');
+                }, function () {
+            $('#galeria_bxslider_sup_btn_esq, #galeria_bxslider_sup_btn_dir').fadeOut('fast');
+        }
+        );
+
+        setTimeout(function () {
+            $('#galeria_bxslider_sup_btn_esq, #galeria_bxslider_sup_btn_dir').fadeOut('fast');
+        }, 2000);
     });
 </script>
 <!--<div id="home" class="banner-slider">-->

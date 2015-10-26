@@ -533,7 +533,7 @@ a.callbacks_nav.callbacks2_nav.next {
     color:#757575;
 }
 /*-- //about --*/
-/*-- Bounce To Bottom --*/
+/*-- Bounce To Bottom --
 .hvr-bounce-to-bottom {
     display: inline-block;
     vertical-align: middle;
@@ -578,7 +578,7 @@ a.callbacks_nav.callbacks2_nav.next {
     -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
     transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
-/*-- //Bounce To Bottom --*/
+-- //Bounce To Bottom --*/
 /*-- award --*/
 .award{
     padding:80px 0;

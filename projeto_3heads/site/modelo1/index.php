@@ -10,6 +10,7 @@ require_once 'lib/banner.php';
  * Módulos
  */
 require_once 'lib/sobre.php';
+require_once 'lib/equipe.php';
 require_once 'lib/servicos.php';
 require_once 'lib/produtos.php';
 require_once 'lib/parceiros.php';
