@@ -69,15 +69,16 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
                 </div>                
             </div>
             <?php
-            $path = $data->diretorio_g . '/';
+            $path = URL_POST_FILE_REMOTE;
+;
             while ($objColImagem->Proximo()) {
                 $objImagem = $objColImagem->getItem();
                 ?>
                 <div class="row">
                     <div class="col-md-2" id="row_<?php echo $objImagem['id'] ?>" style="position: relative;">
                         <label>TV <?php // echo $objImagem['destaque'] ?></label>
-                        <img src="<?php echo $path . $objImagem['nome'] ?>" class="thumbnail small" style="width: 100%;"/>
-                        <a class="btn btn-danger delete" data-toggle="tooltip" title="Deletar" href='javascript:void(0)' data-delete-id="<?php echo $objImagem['id'] ?>" data-delete-url="<?php echo $pathApp . 'imagens' . "/persistence.php" ?>" data-row-id="row_<?php echo $objImagem['id'] ?>" style="position: absolute; bottom: 25px; right: 5px; margin-right: 15px; border-radius: 4px 4px 0 4px;">
+                        <img src="<?php echo  $path . $objImagem['nome_img'] ?>" class="thumbnail small" style="width: 100%;"/>
+                        <a class="btn btn-danger delete" data-toggle="tooltip" title="Deletar" href='javascript:void(0)' data-delete-id="<?php echo $objImagem['id'] ?>" data-delete-url="<?php echo $pathApp . 'imagem' . "/persistence.php" ?>" data-row-id="row_<?php echo $objImagem['id'] ?>" style="position: absolute; bottom: 25px; right: 5px; margin-right: 15px; border-radius: 4px 4px 0 4px;">
                             <i class="glyphicon glyphicon-trash" style="color: #fff;"></i>
                         </a>
                     </div>

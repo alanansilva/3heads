@@ -11,7 +11,7 @@ require_once '../../../sis_3heads/models/Pessoa.php';
 $mail = new PHPMailer();
 $pessoa = new Pessoa();
 $objPessoa = $pessoa->getPessoa();
-UtilString::pr($objPessoa);
+//UtilString::pr($objPessoa);
 extract($_REQUEST);
 //UtilString::pr($_REQUEST);
 ?>
@@ -53,16 +53,11 @@ extract($_REQUEST);
  <?php
     $content = ob_get_clean();
     
-//    $host = "webmail.motor-reserva.com.br";
-//    $userName = "mensagens@motor-reserva.com.br";
-//    $password = "F0c0_@#123**_.";
-//    $from = "mensagens@motor-reserva.com.br";
-    
-    $host = "smtp.gmail.com";
-    $userName = "alanansilva@gmail.com";
-    $password = "guigui12";
-    $from = "alanansilva@gmail.com";
-    
+    $host = "webmail.motor-reserva.com.br";
+    $userName = "mensagens@motor-reserva.com.br";
+    $password = "F0c0_@#123**_.";
+    $from = "mensagens@motor-reserva.com.br";
+        
 //    $host = "mail.meusitenaweb.com.br";
 //$userName = "formulario@meusitenaweb.com.br";
 //$password = "formulario!@foco#";

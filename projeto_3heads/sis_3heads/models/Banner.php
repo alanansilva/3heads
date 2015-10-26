@@ -5,37 +5,40 @@ class Banner {
     private $diretorio = "../../images/";
     public $diretorio_g = "../../images/banners/";
 
-     /**
+   /**
      * Persiste multiplas imagens
      * @param array $file
-     * @param type $menu_id
-     * @param type $relacionamento_id
-     * @param type $edit
-     * @param type $destaque
+     * @param int $menu_id
+     * @param int $quarto_id
      */
-    private function addImagens(array $file, $menu_id, $relacionamento_id, $edit = false, $destaque) {
+   private function addImagens(array $file, $menu_id, $banner_id, $edit = false) {
 
-        $path = $this->diretorio_g;
+        $path = $this->diretorio_g . 'cliente_' . PESSOA_ID . '/';
+        $path = $this->diretorio_g . 'cliente_' . PESSOA_ID . '/';
+        
 
         if (!empty($file)) {
 
+            $options = array(
+                'post_data' => null,
+                'system' => '3heads',
+                'path' => 'images/banners/cliente_' . PESSOA_ID . '/',
+                'path_img_larger' => 'images/banners/cliente_' . PESSOA_ID . '/',
+                'path_img_thumb' => 'images/banners/cliente_' . PESSOA_ID . '/thumbs/',
+                'thumb_width' => null,
+                'thumb_heigth' => null,
+            );
+           
+            $result = PostFileCURL::setPostFileCURL($file, $options);
             if ($edit)
-                Imagem::deleteUploadImagens($menu_id, $relacionamento_id);
+                Imagem::deleteUploadImagens($menu_id, $banner_id);
 
-            foreach ($file['name'] as $key => $value) {
-                $foto = array('name' => $value,
-                    'type' => $file['type'][$key],
-                    'tmp_name' => $file['tmp_name'][$key],
-                    'error' => $file['error'][$key],
-                    'size' => $file['size'][$key]
-                );
-                if (empty($destaque))
-                    $destaque = $key;
+            foreach ($result->file as $key => $imagem) {
+                $destaque = 0;
+                if ($key == 0)
+                    $destaque = 1;
 
-                if ($edit)
-                    Imagem::editUploadImagem($path, $foto, $menu_id, $relacionamento_id, $destaque);
-                else
-                    Imagem::addUploadImagem($path, $foto, $menu_id, $relacionamento_id, $destaque);
+                Imagem::_addUploadImagem($menu_id, $banner_id, $imagem->img_larger, $imagem->img_thumb, $destaque);
             }
         }
     }
@@ -59,13 +62,13 @@ class Banner {
             $sql.= "'" . $ativo . "',";
             $sql.= "'" . $descricao . "'";
             $sql.= ")";
-echo $sql;
+
 
             DBSql::getExecute($sql);
             $banner_id = DBSql::getLastId();
 
             if (!empty($_FILES['tv']['name'])) {
-                $this->addImagens($_FILES['tv'], 1, $banner_id);
+                $this->addImagens($_FILES['tv'], 9, $banner_id);
             }
             return true;
         } catch (Exception $e) {
@@ -92,7 +95,7 @@ echo $sql;
 
             DBSql::getExecute($sql);
             if (!empty($_FILES['tv']['name'])) {
-                $this->addImagens($_FILES['tv'], 1, $id, FALSE);
+                $this->addImagens($_FILES['tv'], 9, $id, FALSE);
             }
             return true;
         } catch (Exception $e) {

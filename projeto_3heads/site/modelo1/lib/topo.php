@@ -15,7 +15,7 @@ require_once '../../sis_3heads/models/Perfil.php';
 require_once '../../sis_3heads/models/TipoPessoa.php';
 require_once '../../sis_3heads/models/Usuario.php';
 require_once '../../sis_3heads/lib/php/PostFileCURL.php';
-require_once '../../sis_3heads/lib/php/UploadFiles.php';
+//require_once '../../sis_3heads/lib/php/UploadFiles.php';
 
 $pessoa = new Pessoa();
 $banner = new Banner();

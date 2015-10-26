@@ -67,7 +67,6 @@ class Imagem {
             $sql.= " null,";
             $sql.= "'" . $nome_img . "','" . $nome_thumb . "','" . $destaque . "'";
             $sql.= ")";
-        die($sql) ;
             DBSql::getExecute($sql);
         } catch (Exception $e) {
             DBSql::getMsgErro($sql);

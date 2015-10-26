@@ -16,6 +16,7 @@ require_once $path . 'String.php';
 require_once $path . 'UtilCombo.php';
 require_once $path . 'Paginacao.php';
 require_once $path . 'PaginacaoLink.php';
+require_once $path . 'PostFileCURL.php';
 
 $_REQUEST = UtilString::clear_data($_REQUEST);
 

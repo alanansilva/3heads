@@ -9,9 +9,10 @@ class PostFileCURL {
      */
     public static function setPostFileCURL(array $remote_file, array $options) {
 
+        $url = "http://3heads/projeto_3heads/curl/remote_upload.php";
 //        $url = "http://" . $_SERVER['HTTP_HOST'] . "/curl/remote_upload.php";
 //        $url = "https://motor-reserva.com.br/curl/remote_upload.php";
-        $url = "http://74.63.255.164/curl/remote_upload.php";
+//        $url = "http://74.63.255.164/curl/remote_upload.php";
 
         $ch = curl_init($url);
 

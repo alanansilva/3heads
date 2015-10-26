@@ -10,7 +10,7 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
                 </h5>
             </div>
         </div>
-        <form id="form_banner" name="form_banner" method="post" action="<?php echo $link ?>/add" role="form">
+        <form id="form_banner" name="form_banner" method="post" action="<?php echo $link ?>/add" role="form" enctype="multipart/form-data">
             <input type="hidden" name="acao" value="1"/>
             <input type="hidden" name="operacao" value="2"/>
             <div class="row">

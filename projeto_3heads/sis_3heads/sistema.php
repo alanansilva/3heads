@@ -2,8 +2,8 @@
 session_start();
 require_once 'lib/php/session.php';
 require_once 'lib/php/menu.php';
-
-define('URL_POST_FILE_REMOTE', 'http://74.63.255.164/curl/');
+$url = "http://3heads/projeto_3heads/curl/";
+define('URL_POST_FILE_REMOTE', $url);
 ?>
 <html>
     <head>
