@@ -1,11 +1,6 @@
 <!-- produtos -->
 <link rel="stylesheet" href="js/colorbox/colorbox.css">
 <script type="text/javascript" src="js/colorbox/jquery.colorbox-min.js"></script>
-<script>
-    $(document).ready(function () {
-        $(".inline").colorbox({inline: true, width: "600"});
-    });
-</script>
 
 <div id="produtos" class="mod_cat">
     <div class="container">
@@ -175,7 +170,48 @@
         <div id="features" class="port-section">
             <div class="container">
                 <div class="port-grids">
-                    <div class="col-md-3 col-sm-4 col-xs-6 port-grid wow zoomInLeft animated">
+                    <?php
+                    $objColConteudo = $conteudo->getColecaoConteudo(null, 1);
+                    while ($objColConteudo->proximo()) {
+                        $objConteudo = $objColConteudo->getItem();
+                        ?>
+                        <script>
+                            $(document).ready(function () {
+                                $(".inline_html_prod_<?php echo $objConteudo['id'] ?>").colorbox({inline: true, width: "600"});
+                            });
+                        </script>
+
+                        <div class="col-md-3 col-sm-4 col-xs-6 port-grid wow zoomInLeft animated">
+                            <a class="inline_html_prod_<?php echo $objConteudo['id'] ?>" href="#inline_content_prod_<?php echo $objConteudo['id'] ?>">
+                                <img src="images/p1.jpg" class="img-responsive" alt="" />
+                            </a>
+                            <div class="text">
+                                <a class="inline_html_prod_<?php echo $objConteudo['id'] ?>" href="#inline_content_prod_<?php echo $objConteudo['id'] ?>">
+                                    <h3><?php echo $objConteudo['titulo'] ?></h3>
+                                </a>
+                                <div class="port-grid-price">R$ <?php echo $objConteudo['valor'] ?></div>
+                                <!--<div class="port-grid-price-sub">8X R$ 10,75</div>-->
+                                <p><?php echo $objConteudo['descricao_breve'] ?></p>
+                            </div>
+                        </div>
+
+                        <div style='display:none'>
+                            <div id='inline_content_prod_<?php echo $objConteudo['id'] ?>' style='padding:10px; background:#fff;'>
+                                <img src="images/img1.jpg" class="img-responsive" alt="" width="100%" />
+                                <div class="text">
+                                    <h2><?php echo $objConteudo['titulo'] ?></h2>
+                                    <div>
+                                        <strong style="font-size: 18px">R$ <?php echo $objConteudo['valor'] ?></strong>
+                                        <!--<span>8X R$ 10,75</span>-->
+                                    </div>
+                                    <p><?php echo $objConteudo['descricao'] ?></p>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                    <!--div class="col-md-3 col-sm-4 col-xs-6 port-grid wow zoomInLeft animated">
                         <a class="inline" href="#inline_content"><img src="images/p1.jpg" class="img-responsive" alt="" /></a>
                         <div class="text">
                             <a class="inline" href="#inline_content"><h3>I am an amazing project</h3></a>
@@ -284,39 +320,10 @@
                             <div class="port-grid-price-sub">8X R$ 10,75</div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis. </p>
                         </div>
-                    </div>
+                    </div-->
                     <div class="clearfix"></div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<div style='display:none'>
-    <div id='inline_content' style='padding:10px; background:#fff;'>
-        <img src="images/img1.jpg" class="img-responsive" alt="" width="100%" />
-        <div class="text">
-            <h2>I am an amazing project ipsum dolor</h2>
-            <div>
-                <strong style="font-size: 18px">R$86,00</strong>
-                <span>8X R$ 10,75</span>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis nulla amet. turpis.</p>
         </div>
     </div>
 </div>
