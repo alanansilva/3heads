@@ -4,7 +4,7 @@
  */
 require_once 'lib/topo.php';
 require_once 'lib/menu.php';
-require_once 'lib/banner.php';
+require_once 'lib/banner.php'; 
 
 /*
  * Módulos
