@@ -17,6 +17,10 @@ body a{
     -moz-transition:0.5s all;
     -o-transition:0.5s all;
     -ms-transition:0.5s all;
+    outline: none;
+}
+body a:hover, body a:active, body a:focus{
+    outline: none;
 }
 h1,h2,h3,h4,h5,h6{
     margin:0;			   
@@ -96,7 +100,7 @@ ul{
 }
 /*-- //kumya --*/
 /*-- Effect 11 --*/
-.cl-effect-11 a {
+/*.cl-effect-11 a {
     margin: 0 14px;
     font-family: 'Roboto Slab', serif;
     text-decoration: none;
@@ -141,7 +145,7 @@ nav a {
 nav a:hover,
 nav a:focus {
     outline: none;
-}
+}*/
 /*-- //Effect 11 --*/
 /*-- Slider Part starts Here --*/
 #slider3,#slider4  {
@@ -399,9 +403,10 @@ a.callbacks_nav.callbacks2_nav.next {
 /*-- Slider part Ends Here --*/
 /*-- header --*/
 .header {
-    background: rgba(255, 255, 255, 0.58);
+    background: rgba(255, 255, 255, 0.9);
     padding: 0px 20px;
-    border-bottom: 4px solid #fff;
+    /*border-bottom: 4px solid #fff;*/
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.11);
 }
 .header-left{
     float:left;

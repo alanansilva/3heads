@@ -23,12 +23,6 @@
     }
     .galeria_bxslider_full_sup_btns #galeria_bxslider_sup_btn_esq, .galeria_bxslider_full_sup_btns #galeria_bxslider_sup_btn_dir{
         position: absolute;
-        width: 35px;
-        height: 60px;
-        text-align: center;
-        background: rgba(0, 0, 0, 0.50);
-        line-height: 68px;
-        margin: 0;
         -webkit-transition: all 100ms ease;
         -moz-transition: all 100ms ease;
         -ms-transition: all 100ms ease;
@@ -54,6 +48,16 @@
         font-size: 18px;
         /*color: #03BEF0;*/
         color: #FFF;
+    }
+    .galeria_bxslider_full_sup_btns .bx-prev, .galeria_bxslider_full_sup_btns .bx-next{
+        width: 35px;
+        height: 60px;
+        display: block;
+        line-height: 68px;
+        position: relative;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.50);
+        margin: 0;
     }
     .galeria_bxslider_full_ger .bx-controls{
         position: relative;
@@ -89,7 +93,7 @@
 
         setTimeout(function () {
             $('#galeria_bxslider_sup_btn_esq, #galeria_bxslider_sup_btn_dir').fadeOut('fast');
-        }, 2000);
+        }, 1000);
     });
 </script>
 <!--<div id="home" class="banner-slider">-->
