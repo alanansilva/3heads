@@ -27,7 +27,8 @@ $menu = new Menu();
 $perfil = new Perfil();
 $tipoPessoa = new TipoPessoa();
 $usuario = new Usuario();
-
+$url = "http://3heads/projeto_3heads/curl/";
+define('URL_POST_FILE_REMOTE', $url);
 define('PESSOA_ID', 1);
 ?>
 <!--

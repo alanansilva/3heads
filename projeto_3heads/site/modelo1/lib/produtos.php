@@ -171,6 +171,7 @@
             <div class="container">
                 <div class="port-grids">
                     <?php
+                         $path = URL_POST_FILE_REMOTE;
                     $objColConteudo = $conteudo->getColecaoConteudo(null, 1);
                     while ($objColConteudo->proximo()) {
                         $objConteudo = $objColConteudo->getItem();
@@ -181,9 +182,14 @@
                             });
                         </script>
 
+                           <?php
+                    $objColImagem = $imagem->getColecaoImagem(7, $objConteudo['id']);
+                    while ($objColImagem->proximo()) {
+                        $objImagem = $objColImagem->getItem();
+                        ?>
                         <div class="col-md-3 col-sm-4 col-xs-6 port-grid wow zoomInLeft animated">
                             <a class="inline_html_prod_<?php echo $objConteudo['id'] ?>" href="#inline_content_prod_<?php echo $objConteudo['id'] ?>">
-                                <img src="images/p1.jpg" class="img-responsive" alt="" />
+                                <img src="<?php echo $path . $objImagem['nome_img']?>" class="img-responsive" alt="" />
                             </a>
                             <div class="text">
                                 <a class="inline_html_prod_<?php echo $objConteudo['id'] ?>" href="#inline_content_prod_<?php echo $objConteudo['id'] ?>">
@@ -197,7 +203,7 @@
 
                         <div style='display:none'>
                             <div id='inline_content_prod_<?php echo $objConteudo['id'] ?>' style='padding:10px; background:#fff;'>
-                                <img src="images/img1.jpg" class="img-responsive" alt="" width="100%" />
+                                <img src="<?php echo $path . $objImagem['nome_img']?>" class="img-responsive" alt="" width="100%" />
                                 <div class="text">
                                     <h2><?php echo $objConteudo['titulo'] ?></h2>
                                     <div>
@@ -209,6 +215,7 @@
                             </div>
                         </div>
                         <?php
+                    }
                     }
                     ?>
                     <!--div class="col-md-3 col-sm-4 col-xs-6 port-grid wow zoomInLeft animated">

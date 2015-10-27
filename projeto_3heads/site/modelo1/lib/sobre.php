@@ -15,9 +15,18 @@
         ?>
         <div class="award-grids">
             <div class="col-md-6 award-left">
-                <a href="images/img1.jpg" class="img_empresa">
-                    <img src="images/img1.jpg" alt="Imagem da empresa" />
-                </a>
+                <?php
+                 $path = URL_POST_FILE_REMOTE;
+                $objColImagem = $imagem->getColecaoImagem(7, $objConteudo['id']);
+                while ($objColImagem->proximo()) {
+                    $objImagem = $objColImagem->getItem();
+                    ?>
+                    <a href="<?php echo $path . $objImagem['nome_img']?>" class="img_empresa">
+                        <img src="<?php echo $path . $objImagem['nome_img']?>" alt="Imagem da empresa" />
+                    </a>
+                    <?php
+                }
+                ?>
             </div>
             <div class="col-md-6 award-right">
                 <h3><?php echo $objConteudo['titulo'] ?></h3>

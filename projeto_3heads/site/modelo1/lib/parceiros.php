@@ -26,52 +26,23 @@
                 width: 100%;
             }
         </style>
-        <ul class="">
-            <li>
-                <a href="javascript:void(0)">
-                    <img src="images/clientes/1.png" alt="Parceiros" />
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">
-                    <img src="images/clientes/2.png" alt="Parceiros" />
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">
-                    <img src="images/clientes/3.png" alt="Parceiros" />
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">
-                    <img src="images/clientes/4.png" alt="Parceiros" />
-                </a>
-            </li>
-            <li>	
-                <a href="javascript:void(0)">
-                    <img src="images/clientes/5.png" alt="Parceiros" />
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">
-                    <img src="images/clientes/6.png" alt="Parceiros" />
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">
-                    <img src="images/clientes/7.png" alt="Parceiros" />
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">
-                    <img src="images/clientes/1.png" alt="Parceiros" />
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">
-                    <img src="images/clientes/2.png" alt="Parceiros" />
-                </a>
-            </li>
+        <ul>
+            <?php
+            $path = URL_POST_FILE_REMOTE;
+            $objColConteudo = $conteudo->getColecaoConteudo(null, 5);
+            while ($objColConteudo->proximo()) {
+                $objConteudo = $objColConteudo->getItem();
+                $objImagem = $imagem->getImagem(null, 9, $objConteudo['id']);
+                UtilString::pr($objImagem);
+                    ?>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img src="<?php echo $path . $objImagem['nome_img'] ?>" alt="Parceiros" />
+                        </a>
+                    </li>
+                    <?php
+            }
+            ?>
         </ul>
     </div>
 </div>

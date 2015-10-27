@@ -92,6 +92,14 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
                     <input type='text' name='descricao_breve'  id='descricao_breve' class='form-control'   placeholder="Descricao_breve">
                 </div>
             </div>
+                <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="icone">Foto</label>
+                        <input type="file" name='foto[]' id='foto' multiple=""/>
+                    </div>
+                </div>                
+            </div>
             <div class="row">
                 <div class="col-md-12 configuracao_equipe_2">
                     <label for="descricao">Descricao</label>

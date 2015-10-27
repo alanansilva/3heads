@@ -2,6 +2,47 @@
 
 class Conteudo {
 
+    private $diretorio = "../../images/";
+    public $diretorio_g = "../../images/conteudo/";
+
+    /**
+     * Persiste multiplas imagens
+     * @param array $file
+     * @param int $menu_id
+     * @param int $banner_id
+     */
+    private function addImagens(array $file, $menu_id, $conteudo_id, $edit = false) {
+
+        $path = $this->diretorio_g . 'cliente_' . PESSOA_ID . '/';
+        $path = $this->diretorio_g . 'cliente_' . PESSOA_ID . '/';
+
+
+        if (!empty($file)) {
+
+            $options = array(
+                'post_data' => null,
+                'system' => '3heads',
+                'path' => 'images/banners/cliente_' . PESSOA_ID . '/',
+                'path_img_larger' => 'images/conteudo/cliente_' . PESSOA_ID . '/',
+                'path_img_thumb' => 'images/conteudo/cliente_' . PESSOA_ID . '/thumbs/',
+                'thumb_width' => null,
+                'thumb_heigth' => null,
+            );
+
+            $result = PostFileCURL::setPostFileCURL($file, $options);
+            if ($edit)
+                Imagem::deleteUploadImagens($menu_id, $conteudo_id);
+
+            foreach ($result->file as $key => $imagem) {
+                $destaque = 0;
+                if ($key == 0)
+                    $destaque = 1;
+
+                Imagem::_addUploadImagem($menu_id, $conteudo_id, $imagem->img_larger, $imagem->img_thumb, $destaque);
+            }
+        }
+    }
+
     public function add() {
         extract($_REQUEST);
 
@@ -36,6 +77,11 @@ class Conteudo {
 
 
             DBSql::getExecute($sql);
+            $conteudo_id = DBSql::getLastId();
+
+            if (!empty($_FILES['foto']['name'])) {
+                $this->addImagens($_FILES['foto'], 7, $conteudo_id);
+            }
 
             return true;
         } catch (Exception $e) {
@@ -68,6 +114,9 @@ class Conteudo {
 
             DBSql::getExecute($sql);
 
+            if (!empty($_FILES['foto']['name'])) {
+                $this->addImagens($_FILES['foto'], 7, $id, FALSE);
+            }
             return true;
         } catch (Exception $e) {
 
@@ -145,7 +194,7 @@ class Conteudo {
         $sql.= " FROM ";
         $sql.= "	conteudo";
         $sql.= " WHERE 1=1";
-         if (!empty($id))
+        if (!empty($id))
             $sql.= "	 AND id = '" . $id . "'";
         if (!empty($conteudo_categoria_id))
             $sql.= "	 AND conteudo_categoria_id = '" . $conteudo_categoria_id . "'";

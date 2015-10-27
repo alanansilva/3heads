@@ -5,7 +5,8 @@ require_once '../../models/Conteudo.php';
 $data = new Conteudo();
 require_once '../../models/ConteudoCategoria.php';
 $conteudoCategoria = new ConteudoCategoria();
-
+require_once '../../models/Imagem.php';
+$imagem = new Imagem();
 $link = 'app.php?app=' . $app;
 ?>
 

@@ -5,17 +5,17 @@ class Banner {
     private $diretorio = "../../images/";
     public $diretorio_g = "../../images/banners/";
 
-   /**
+    /**
      * Persiste multiplas imagens
      * @param array $file
      * @param int $menu_id
-     * @param int $quarto_id
+     * @param int $banner_id
      */
-   private function addImagens(array $file, $menu_id, $banner_id, $edit = false) {
+    private function addImagens(array $file, $menu_id, $banner_id, $edit = false) {
 
         $path = $this->diretorio_g . 'cliente_' . PESSOA_ID . '/';
         $path = $this->diretorio_g . 'cliente_' . PESSOA_ID . '/';
-        
+
 
         if (!empty($file)) {
 
@@ -28,7 +28,7 @@ class Banner {
                 'thumb_width' => null,
                 'thumb_heigth' => null,
             );
-           
+
             $result = PostFileCURL::setPostFileCURL($file, $options);
             if ($edit)
                 Imagem::deleteUploadImagens($menu_id, $banner_id);
@@ -155,7 +155,7 @@ class Banner {
         return DBSql::getCollection($sql);
     }
 
-    public function getBanner($id) {
+    public function getBanner($id = null, $banner_categoria_id = null) {
 
 
         $sql = "SELECT";
@@ -167,8 +167,12 @@ class Banner {
         $sql.= "	 descricao ";
         $sql.= " FROM ";
         $sql.= "	banner";
-        $sql.= " WHERE ";
-        $sql.= "	id = " . $id;
+        $sql.= " WHERE 1 = 1";
+        if (!empty($id))
+            $sql.= "	 AND id = '" . $id . "'";
+        if (!empty($banner_categoria_id))
+            $sql.= "	 AND banner_categoria_id = '" . $banner_categoria_id . "'";
+
         return DBSql::getArray($sql);
     }
 

@@ -70,7 +70,6 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
             </div>
             <?php
             $path = URL_POST_FILE_REMOTE;
-;
             while ($objColImagem->Proximo()) {
                 $objImagem = $objColImagem->getItem();
                 ?>
