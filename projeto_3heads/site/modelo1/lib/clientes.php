@@ -7,50 +7,26 @@
         <div class="clearfix"></div>
         <div class="nbs-flexisel-container">
             <div class="nbs-flexisel-inner">
-                <ul id="flexiselDemo1" class="nbs-flexisel-ul" style="left: -228px; display: block;">			
-                    <li class="nbs-flexisel-item" style="width: 300px;">
-                        <div class="sliderfig-grid">
-                            <img src="images/clientes/5.png" alt=" " class="img-responsive">
-                        </div>
-                    </li>
-                    <li class="nbs-flexisel-item" style="width: 300px;">
-                        <div class="sliderfig-grid">
-                            <img src="images/clientes/2.png" alt=" " class="img-responsive">
-                        </div>
-                    </li>
-                    <li class="nbs-flexisel-item" style="width: 300px;">
-                        <div class="sliderfig-grid">
-                            <img src="images/clientes/3.png" alt=" " class="img-responsive">
-                        </div>
-                    </li>
-                    <li class="nbs-flexisel-item" style="width: 300px;">
-                        <div class="sliderfig-grid">
-                            <img src="images/clientes/4.png" alt=" " class="img-responsive">
-                        </div>
-                    </li>
-                    <li class="nbs-flexisel-item" style="width: 300px;">
-                        <div class="sliderfig-grid">
-                            <img src="images/clientes/6.png" alt=" " class="img-responsive">
-                        </div>
-                    </li>
-                    <li class="nbs-flexisel-item" style="width: 300px;">
-                        <div class="sliderfig-grid">
-                            <img src="images/clientes/7.png" alt=" " class="img-responsive">
-                        </div>
-                    </li>
-                    <li class="nbs-flexisel-item" style="width: 300px;">
-                        <div class="sliderfig-grid">
-                            <img src="images/clientes/5.png" alt=" " class="img-responsive">
-                        </div>
-                    </li>
-                    <li class="nbs-flexisel-item" style="width: 300px;">
-                        <div class="sliderfig-grid">
-                            <img src="images/clientes/1.png" alt=" " class="img-responsive">
-                        </div>
-                    </li>
+                <ul id="flexiselDemo1" class="nbs-flexisel-ul" style="left: -228px; display: block;">	
+                    <?php
+                    $path = URL_POST_FILE_REMOTE;
+                    $objColConteudo = $conteudo->getColecaoConteudo(null, 6);
+//             UtilString::pr($objColConteudo);
+                    while ($objColConteudo->proximo()) {
+                        $objConteudo = $objColConteudo->getItem();
+                        $objImagem = $imagem->getImagem(null, 7, $objConteudo['id']);
+                        ?>
+                        <li class="nbs-flexisel-item" style="width: 300px;">
+                            <div class="sliderfig-grid">
+                                <img src="<?php echo $path . $objImagem['nome_img'] ?>" alt=" " class="img-responsive">
+                            </div>
+                        </li>
+                        <?php
+                    }
+                    ?>
                 </ul>
-<!--                <div class="nbs-flexisel-nav-left" style="top: 27.5px;"></div>
-                <div class="nbs-flexisel-nav-right" style="top: 27.5px;"></div>-->
+                <!--                <div class="nbs-flexisel-nav-left" style="top: 27.5px;"></div>
+                                <div class="nbs-flexisel-nav-right" style="top: 27.5px;"></div>-->
             </div>
         </div>
         <script type="text/javascript">

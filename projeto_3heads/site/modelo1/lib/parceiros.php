@@ -30,10 +30,11 @@
             <?php
             $path = URL_POST_FILE_REMOTE;
             $objColConteudo = $conteudo->getColecaoConteudo(null, 5);
+//             UtilString::pr($objColConteudo);
             while ($objColConteudo->proximo()) {
                 $objConteudo = $objColConteudo->getItem();
-                $objImagem = $imagem->getImagem(null, 9, $objConteudo['id']);
-                UtilString::pr($objImagem);
+                $objImagem = $imagem->getImagem(null, 7, $objConteudo['id']);
+               
                     ?>
                     <li>
                         <a href="javascript:void(0)">

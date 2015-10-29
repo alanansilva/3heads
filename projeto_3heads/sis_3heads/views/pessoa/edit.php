@@ -1,7 +1,7 @@
 <?php
 require_once 'default.php';
 $obj = $data->getPessoa($_REQUEST['id']);
-
+$objColImagem = $imagem->getColecaoImagem(5, $obj['id']);
 if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
     ?>
     <div class="container-fluid">
@@ -33,32 +33,44 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
                     echo UtilCombo::getComboCollectionOrArray($tipoPessoa->getColecaoTipoPessoa(), $options);
                     ?>
                 </div>
-                 <div class="col-md-3 skin-minimal">
+                <div class="col-md-3 skin-minimal">
                     <label for="fisica_juridica">* Fisica/juridica</label>
-                    <input type='radio' name='fisica_juridica'  id='fisica_juridica'  value='S' <?php if ($obj['fisica_juridica'] == 'F') {
-                    echo 'checked';
-                } ?> />F
-                    <input type='radio' name='fisica_juridica'  id='fisica_juridica'  value='N' <?php if ($obj['fisica_juridica'] == 'J') {
-                    echo 'checked';
-                } ?>/>J
+                    <input type='radio' name='fisica_juridica'  id='fisica_juridica'  value='S' <?php
+                    if ($obj['fisica_juridica'] == 'F') {
+                        echo 'checked';
+                    }
+                    ?> />F
+                    <input type='radio' name='fisica_juridica'  id='fisica_juridica'  value='N' <?php
+                    if ($obj['fisica_juridica'] == 'J') {
+                        echo 'checked';
+                    }
+                    ?>/>J
                 </div>
-                 <div class="col-md-3">
+                <div class="col-md-3">
                     <label for="ativo">* Ativo</label>
-                    <input type='radio' name='ativo'  id='ativo'  value='S' <?php if ($obj['ativo'] == 'S') {
-                    echo 'checked';
-                } ?> />Sim 
-                    <input type='radio' name='ativo'  id='ativo'  value='N' <?php if ($obj['ativo'] == 'N') {
-                    echo 'checked';
-                } ?>/>Não
+                    <input type='radio' name='ativo'  id='ativo'  value='S' <?php
+                    if ($obj['ativo'] == 'S') {
+                        echo 'checked';
+                    }
+                    ?> />Sim 
+                    <input type='radio' name='ativo'  id='ativo'  value='N' <?php
+                    if ($obj['ativo'] == 'N') {
+                        echo 'checked';
+                    }
+                    ?>/>Não
                 </div>
-                 <div class="col-md-3">
+                <div class="col-md-3">
                     <label for="excluido">* Excluido</label>
-                    <input type='radio' name='excluido'  id='excluido'  value='S' <?php if ($obj['excluido'] == 'S') {
-                    echo 'checked';
-                } ?> />Sim 
-                    <input type='radio' name='excluido'  id='excluido'  value='N' <?php if ($obj['excluido'] == 'N') {
-                    echo 'checked';
-                } ?>/>Não
+                    <input type='radio' name='excluido'  id='excluido'  value='S' <?php
+                    if ($obj['excluido'] == 'S') {
+                        echo 'checked';
+                    }
+                    ?> />Sim 
+                    <input type='radio' name='excluido'  id='excluido'  value='N' <?php
+                    if ($obj['excluido'] == 'N') {
+                        echo 'checked';
+                    }
+                    ?>/>Não
                 </div>
             </div>
             <div class="row">
@@ -91,23 +103,32 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
                     <input type='text' name='mapa_localizacao'  id='mapa_localizacao' class='form-control' value="<?php echo $obj['mapa_localizacao'] ?>"  placeholder="Mapa de Localização">
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="form-group" data-toggle="tooltip" data-placement="top" title="Tamanho: 620px X 385px">
-                    <label for="icone">Fotos</label>
-                    <input type="file" name='foto[]' multiple id='foto' />
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group" data-toggle="tooltip" data-placement="top" title="Tamanho: 620px X 385px">
+                        <label for="icone">Logomarca</label>
+                        <input type="file" name='logomarca[]' multiple id='logomarca' />
+                    </div>
                 </div>
             </div>
-            <div class='row'>
-            <div class="col-md-4">
-                <!-- UPLOAD PROGRESS-->
-                <div class="progress">
-                    <div class="bar"></div >
-                    <div class="percent">0%</div>
+            <?php
+            $path = URL_POST_FILE_REMOTE;
+            while ($objColImagem->Proximo()) {
+                $objImagem = $objColImagem->getItem();
+                ?>
+                <div class="row">
+                    <div class="col-md-2" id="row_<?php echo $objImagem['id'] ?>" style="position: relative;">
+                        <!--<label>Foto <?php // echo $objImagem['destaque']   ?></label>-->
+                        <img src="<?php echo $path . $objImagem['nome_img'] ?>" class="thumbnail small" style="width: 100%;"/>
+                        <a class="btn btn-danger delete" data-toggle="tooltip" title="Deletar" href='javascript:void(0)' data-delete-id="<?php echo $objImagem['id'] ?>" data-delete-url="<?php echo $pathApp . 'imagem' . "/persistence.php" ?>" data-row-id="row_<?php echo $objImagem['id'] ?>" style="position: absolute; bottom: 25px; right: 5px; margin-right: 15px; border-radius: 4px 4px 0 4px;">
+                            <i class="glyphicon glyphicon-trash" style="color: #fff;"></i>
+                        </a>
+                    </div>
                 </div>
-                <div id="status"></div>
-                <!-- UPLOAD PROGRESS-->
-            </div>
-            </div>
+
+                <?php
+            }
+            ?>
             <input type="submit" class="btn btn-success" name="salvar" id="salvar" value="Salvar"/>
             <input type="button" class="btn btn-primary" name="voltar" value="Voltar" onclick="window.location.href = '<?php echo $link ?>/index'"/>
         </form>

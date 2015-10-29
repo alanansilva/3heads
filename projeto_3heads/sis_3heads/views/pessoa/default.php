@@ -7,6 +7,9 @@ $data = new Pessoa();
 require_once '../../models/TipoPessoa.php';
 $tipoPessoa = new TipoPessoa();
 
+require_once '../../models/Imagem.php';
+$imagem = new Imagem();
+
 $link = 'app.php?app=' . $app;
 ?>
 

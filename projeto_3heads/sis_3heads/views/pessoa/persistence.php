@@ -6,7 +6,8 @@ require_once '../../models/Pessoa.php';
 $data = new Pessoa();
 require_once '../../models/TipoPessoa.php';
 $tipoPessoa = new TipoPessoa();
-
+require_once '../../models/Imagem.php';
+$imagem = new Imagem();
 
 foreach ($_REQUEST as $key => $value)
     $_REQUEST[$key] = utf8_decode($value);

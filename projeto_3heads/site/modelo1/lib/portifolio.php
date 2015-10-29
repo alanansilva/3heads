@@ -12,79 +12,27 @@
         </div>
         <div class="clearfix"></div>
         <section>
+            <?php
+              $path = URL_POST_FILE_REMOTE;
+            $objColConteudo = $conteudo->getColecaoConteudo(null, 7);
+//             UtilString::pr($objColConteudo);
+            while ($objColConteudo->proximo()) {
+                $objConteudo = $objColConteudo->getItem();
+                $objImagem = $imagem->getImagem(null, 7, $objConteudo['id']);
+               
+                    ?>
             <ul id="da-thumbs" class="da-thumbs">
                 <li>
-                    <a href="images/a1.jpg" class="colorBoxGroup1">
-                        <img src="images/a1.jpg" alt="Imagem" />
+                    <a href="<?php echo $path . $objImagem['nome_img'] ?>" class="colorBoxGroup1">
+                        <img src="<?php echo $path . $objImagem['nome_img'] ?>" alt="Imagem" />
                         <div>
                             <h5>VER</h5>
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="images/a2.jpg" class="colorBoxGroup1">
-                        <img src="images/a2.jpg" alt="Imagem" />
-                        <div>
-                            <h5>VER</h5>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="images/a3.jpg" class="colorBoxGroup1">
-                        <img src="images/a3.jpg" alt="Imagem" />
-                        <div>
-                            <h5>VER</h5>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="images/a4.jpg" class="colorBoxGroup1">
-                        <img src="images/a4.jpg" alt="Imagem" />
-                        <div>
-                            <h5>VER</h5>
-                        </div>
-                    </a>
-                </li>
-                <li>	
-                    <a href="images/a5.jpg" class="colorBoxGroup1">
-                        <img src="images/a5.jpg" alt="Imagem" />
-                        <div>
-                            <h5>VER</h5>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="images/a6.jpg" class="colorBoxGroup1">
-                        <img src="images/a6.jpg" alt="Imagem" />
-                        <div>
-                            <h5>VER</h5>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="images/a7.jpg" class="colorBoxGroup1">
-                        <img src="images/a7.jpg" alt="Imagem" />
-                        <div>
-                            <h5>VER</h5>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="images/a1.jpg" class="colorBoxGroup1">
-                        <img src="images/a1.jpg" alt="Imagem" />
-                        <div>
-                            <h5>VER</h5>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="images/a2.jpg" class="colorBoxGroup1">
-                        <img src="images/a2.jpg" alt="Imagem" />
-                        <div>
-                            <h5>VER</h5>
-                        </div>
-                    </a>
-                </li>
+                         <?php
+            }
+            ?>
             </ul>
         </section>
         <script type="text/javascript" src="js/jquery.hoverdir.js"></script>	

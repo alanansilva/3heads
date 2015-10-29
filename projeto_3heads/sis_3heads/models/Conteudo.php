@@ -22,7 +22,7 @@ class Conteudo {
             $options = array(
                 'post_data' => null,
                 'system' => '3heads',
-                'path' => 'images/banners/cliente_' . PESSOA_ID . '/',
+                'path' => 'images/conteudo/cliente_' . PESSOA_ID . '/',
                 'path_img_larger' => 'images/conteudo/cliente_' . PESSOA_ID . '/',
                 'path_img_thumb' => 'images/conteudo/cliente_' . PESSOA_ID . '/thumbs/',
                 'thumb_width' => null,
