@@ -15,6 +15,8 @@ require_once '../../sis_3heads/models/Perfil.php';
 require_once '../../sis_3heads/models/TipoPessoa.php';
 require_once '../../sis_3heads/models/Usuario.php';
 require_once '../../sis_3heads/lib/php/PostFileCURL.php';
+require_once '../../sis_3heads/models/IconeBootstrap.php';
+
 //require_once '../../sis_3heads/lib/php/UploadFiles.php';
 
 $pessoa = new Pessoa();
@@ -27,6 +29,8 @@ $menu = new Menu();
 $perfil = new Perfil();
 $tipoPessoa = new TipoPessoa();
 $usuario = new Usuario();
+$iconeBootstrap = new IconeBootstrap();
+
 $url = "http://3heads/projeto_3heads/curl/";
 define('URL_POST_FILE_REMOTE', $url);
 define('PESSOA_ID', 1);
