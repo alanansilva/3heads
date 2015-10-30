@@ -71,9 +71,8 @@ class Imagem {
         } catch (Exception $e) {
             DBSql::getMsgErro($sql);
         }
-         
     }
-    
+
     /**
      * Persite um upload de imagem
      * @param type $path
@@ -87,7 +86,7 @@ class Imagem {
 
         try {
             UtilString::CreatePathPermission($path);
-            
+
             $upload = new UploadFiles();
             $upload->upload($path, $file);
 
@@ -183,25 +182,16 @@ class Imagem {
      *
      * @return Bollean
      */
-    public function delete($relacionamento_id = '') {
-        $dbRetorno = true;
-        extract($_REQUEST);
+    public function delete($relacionamento_id = null) {
+        try {
+            $sql = " DELETE FROM imagem WHERE id = " . $relacionamento_id;
 
-        $objImagem = $this->getImagem($id, $menu_id, $relacionamento_id);
+            DBSql::getExecute($sql);
 
-        $cliente = 'cliente_' . $_SESSION['dados']['pessoa']['id'] . '/';
-        $caminho = '../../images/' . $caminho . '/' . $cliente;
-
-        @unlink($caminho . 'grandes/' . $objImagem['nome_img']);
-        @unlink($caminho . 'thumbs/' . $objImagem['nome_thumb']);
-
-        $sql = " DELETE FROM imagem WHERE id = " . $id;
-
-        if (!$this->objDb->Execute($sql)) {
-            $dbRetorno = false;
+            return true;
+        } catch (PDOException $e) {
+            return false;
         }
-
-        return $dbRetorno;
     }
 
     public function deleteExterno($relacionamento_id = '', $delTodasImagensArea = false, $arrayDirImg = array()) {
