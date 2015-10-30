@@ -41,7 +41,7 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
                 </div>
             </div>
             <div class="row">
-                  <div class="col-md-4 configuracao_equipe" style="display: none">
+                <div class="col-md-4 configuracao_equipe" style="display: none">
                     <label for="nome">* Nome</label>
                     <input type='text' name='nome'  id='nome' class='form-control'   placeholder="Nome">
                 </div>
@@ -56,34 +56,34 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
                 <div class="col-md-4">
                     <label for="ordem">* Ordem</label>
                     <!--<input type='text' name='ordem'  id='ordem' class='form-control'   placeholder="Ordem">-->
-                   <?php
-                        $arrayOrdem = array(
-                            array('id' => '1', 'nome' => "1"),
-                            array('id' => '2', 'nome' => "2"),
-                            array('id' => '3', 'nome' => "3"),
-                            array('id' => '4', 'nome' => "4"),
-                            array('id' => '5', 'nome' => "5")
-                        );
-                        $options = array(
-                            'name' => 'ordem',
-                            'id' => 'ordem',
-                            'value' => 'id',
-                            'label' => array('nome'),
-                            'selected' => array('field' => 'id', 'value' => ""),
-                            'class' => array('form-control', 'input-sm', 'valid'),
-                            'option_default' => array('label' => ':: Selecione ::', 'value' => null),
-                        );
-                        echo @UtilCombo::getComboCollectionOrArray($arrayOrdem, $options);
-                        ?>
+                    <?php
+                    $arrayOrdem = array(
+                        array('id' => '1', 'nome' => "1"),
+                        array('id' => '2', 'nome' => "2"),
+                        array('id' => '3', 'nome' => "3"),
+                        array('id' => '4', 'nome' => "4"),
+                        array('id' => '5', 'nome' => "5")
+                    );
+                    $options = array(
+                        'name' => 'ordem',
+                        'id' => 'ordem',
+                        'value' => 'id',
+                        'label' => array('nome'),
+                        'selected' => array('field' => 'id', 'value' => ""),
+                        'class' => array('form-control', 'input-sm', 'valid'),
+                        'option_default' => array('label' => ':: Selecione ::', 'value' => null),
+                    );
+                    echo @UtilCombo::getComboCollectionOrArray($arrayOrdem, $options);
+                    ?>
                 </div>
                 <div class="col-md-4 ">
                     <label for="ativo">* Ativo</label>
                     <input type="radio" id="ativo" class="radio-inline" name="ativo" value='S' checked /> Sim
                     <input type="radio" id="ativo" class="radio-inline" name="ativo" value='N' /> Não
                 </div>
-                <div class="col-md-4 configuracao_equipe_2">
+                <div class="col-md-4 configuracao_produto" style="display: none">
                     <label for="valor">* Valor</label>
-                    <input type='text' name='valor'  id='valor' class='form-control' placeholder="Valor">
+                    <input type='text' name='valor'  id='valor' class='form-control moeda' placeholder="0,00">
                 </div>
             </div>
             <div class="row">
@@ -92,13 +92,33 @@ if ($_REQUEST['acao'] == 1 && $_REQUEST['operacao'] == 1) {
                     <input type='text' name='descricao_breve'  id='descricao_breve' class='form-control'   placeholder="Descricao_breve">
                 </div>
             </div>
-                <div class="row">
-                <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-4 configuracao_servico_2">
                     <div class="form-group">
                         <label for="icone">Foto</label>
                         <input type="file" name='foto[]' id='foto' multiple=""/>
                     </div>
-                </div>                
+                </div> 
+                <div class="col-md-8 configuracao_servico" style="display: none">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            Ícone <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="dropdown-icones" role="menu" style="overflow: auto; height: 330px; width: 840px; min-width: 840px; max-width: 840px;">
+                            <?php
+                            $objColIconeBootstrap->inicio();
+                            while ($objColIconeBootstrap->proximo()) {
+                                $objIconeBootstrap = $objColIconeBootstrap->getItem();
+                                $checked = null;
+                                if ($objIconeBootstrap['id'] == $obj['icone_bootstrap_id']) {
+                                    $checked = 'checked="" ';
+                                }
+                                echo '<li style="float: left; margin-right: 10px; margin-left: 5px; border-right: 1px solid #ccc; padding-right: 10px"><input type="radio" name="icone_bootstrap_id" value="' . $objIconeBootstrap['id'] . '" ' . $checked . ' style="margin-right: 10px;" id="icone_bootstrap_id" ><span class="' . $objIconeBootstrap['classe'] . '"</span></li>';
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-12 configuracao_equipe_2">

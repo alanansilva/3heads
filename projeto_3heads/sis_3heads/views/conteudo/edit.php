@@ -38,13 +38,24 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
                     echo UtilCombo::getComboCollectionOrArray($objColConteudoCategoria, $options);
                     ?>
                 </div>
-                 <?php
+                <?php
                 if ($obj['conteudo_categoria_id'] != 4) {
                     $display = "none";
-                }else{
+                } else {
                     $display2 = "none";
                 }
+                
+                
+                if ($obj['conteudo_categoria_id'] != 2) {
+                    $display3 = "none";
+                } else {
+                    $display5 = "none";
+                }
+
+                if ($obj['conteudo_categoria_id'] != 1)
+                    $display4 = "none";
                 ?>
+
                 <div class="col-md-4 configuracao_equipe_2" style="display: <?php echo $display2 ?>" >
                     <label for="titulo">* Titulo</label>
                     <input type='text' name='titulo'  id='titulo' class='form-control'  value='<?php echo $obj['titulo'] ?>' placeholder="Titulo">
@@ -55,7 +66,7 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
                 </div>
             </div>
             <div class="row">
-                 <div class="col-md-4 configuracao_equipe"  style="display: <?php echo $display ?>">
+                <div class="col-md-4 configuracao_equipe"  style="display: <?php echo $display ?>">
                     <label for="nome">* Nome</label>
                     <input type='text' name='nome'  id='nome' class='form-control'  value='<?php echo $obj['nome'] ?>'  placeholder="Nome">
                 </div>
@@ -70,7 +81,7 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
                 <div class="col-md-4">
                     <label for="ordem">* Ordem</label>
                     <!--<input type='text' name='ordem'  id='ordem' class='form-control'   placeholder="Ordem">-->
-                         <?php
+                    <?php
                     $arrayOrdem = array(
                         array('id' => '1', 'nome' => "1"),
                         array('id' => '2', 'nome' => "2"),
@@ -92,16 +103,20 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
                 </div>
                 <div class="col-md-4">
                     <label for="ativo">* Ativo</label>
-                    <input type='radio' name='ativo'  id='ativo'  value='S' <?php if ($obj['ativo'] == 'S') {
-                    echo 'checked';
-                } ?> />Sim 
-                    <input type='radio' name='ativo'  id='ativo'  value='N' <?php if ($obj['ativo'] == 'N') {
-                    echo 'checked';
-                } ?>/>Não
+                    <input type='radio' name='ativo'  id='ativo'  value='S' <?php
+                    if ($obj['ativo'] == 'S') {
+                        echo 'checked';
+                    }
+                    ?> />Sim 
+                    <input type='radio' name='ativo'  id='ativo'  value='N' <?php
+                    if ($obj['ativo'] == 'N') {
+                        echo 'checked';
+                    }
+                    ?>/>Não
                 </div>
-                <div class="col-md-4 configuracao_equipe_2" style="display: <?php echo $display2 ?>">
+                <div class="col-md-4 configuracao_produto" style="display: <?php echo $display4 ?>">
                     <label for="valor">* Valor</label>
-                    <input type='text' name='valor'  id='valor' class='form-control'  value='<?php echo $obj['valor'] ?>' placeholder="Valor">
+                    <input type='text' name='valor'  id='valor' class='form-control moeda'  value='<?php echo $obj['valor'] ?>' placeholder="0,00">
                 </div>
             </div>
             <div class="row">
@@ -110,32 +125,52 @@ if ($_REQUEST['acao'] == 2 && $_REQUEST['operacao'] == 1) {
                     <input type='text' name='descricao_breve'  id='descricao_breve' class='form-control'  value='<?php echo $obj['descricao_breve'] ?>' placeholder="Descricao_breve">
                 </div>
             </div>
-                <div class="row">
-                <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-4 configuracao_servico_2" style="display: <?php echo $display5 ?>">
                     <div class="form-group">
                         <label for="icone">Foto</label>
                         <input type="file" name='foto[]' id='foto' multiple=""/>
                     </div>
-                </div>                
+                </div>
+                <div class="col-md-8 configuracao_servico" style="display: <?php echo $display3 ?>">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            Ícone <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" id="dropdown-icones" role="menu" style="overflow: auto; height: 330px; width: 840px; min-width: 840px; max-width: 840px;">
+                            <?php
+                            $objColIconeBootstrap->inicio();
+                            while ($objColIconeBootstrap->proximo()) {
+                                $objIconeBootstrap = $objColIconeBootstrap->getItem();
+                                $checked = null;
+                                if ($objIconeBootstrap['id'] == $obj['icone_bootstrap_id']) {
+                                    $checked = 'checked="" ';
+                                }
+                                echo '<li style="float: left; margin-right: 10px; margin-left: 5px; border-right: 1px solid #ccc; padding-right: 10px"><input type="radio" name="icone_bootstrap_id" value="' . $objIconeBootstrap['id'] . '" ' . $checked . ' style="margin-right: 10px;" id="icone_bootstrap_id" ><span class="' . $objIconeBootstrap['classe'] . '"</span></li>';
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <?php
             $path = URL_POST_FILE_REMOTE;
             while ($objColImagem->Proximo()) {
                 $objImagem = $objColImagem->getItem();
                 ?>
-                <div class="row">
+                <div class="row configuracao_servico_2">
                     <div class="col-md-2" id="row_<?php echo $objImagem['id'] ?>" style="position: relative;">
-                        <!--<label>Foto <?php // echo $objImagem['destaque'] ?></label>-->
-                        <img src="<?php echo  $path . $objImagem['nome_img'] ?>" class="thumbnail small" style="width: 100%;"/>
+                        <!--<label>Foto <?php // echo $objImagem['destaque']  ?></label>-->
+                        <img src="<?php echo $path . $objImagem['nome_img'] ?>" class="thumbnail small" style="width: 100%;"/>
                         <a class="btn btn-danger delete" data-toggle="tooltip" title="Deletar" href='javascript:void(0)' data-delete-id="<?php echo $objImagem['id'] ?>" data-delete-url="<?php echo $pathApp . 'imagem' . "/persistence.php" ?>" data-row-id="row_<?php echo $objImagem['id'] ?>" style="position: absolute; bottom: 25px; right: 5px; margin-right: 15px; border-radius: 4px 4px 0 4px;">
                             <i class="glyphicon glyphicon-trash" style="color: #fff;"></i>
                         </a>
                     </div>
                 </div>
 
-                <?php
-            }
-            ?>
+        <?php
+    }
+    ?>
             <div class="row">
                 <div class="col-md-12 configuracao_equipe_2" style="display: <?php echo $display2 ?>">
                     <label for="descricao">Descricao</label>

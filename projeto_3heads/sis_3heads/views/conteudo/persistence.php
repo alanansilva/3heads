@@ -1,5 +1,8 @@
 <?php
 header('Content-type: application/json;  charset=iso-8859-1', true);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+
 require_once '../../lib/php/conn.php';
 
 require_once '../../models/Conteudo.php';
@@ -10,6 +13,9 @@ $conteudoCategoria = new ConteudoCategoria();
 
 require_once '../../models/Imagem.php';
 $imagem = new Imagem();
+
+require_once '../../models/IconeBootstrap.php';
+$iconeBootstrap = new IconeBootstrap();
 
 require_once '../../lib/php/UploadFiles.php';
 

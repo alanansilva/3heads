@@ -59,20 +59,22 @@ class Conteudo {
             $sql.= " valor,";
             $sql.= " nome,";
             $sql.= " cargo,";
-            $sql.= " funcao";
+            $sql.= " funcao,";
+            $sql.= " icone_bootstrap_id";
             $sql.= ")";
             $sql.= "VALUES (";
             $sql.= "'" . $conteudo_categoria_id . "',";
-            $sql.= "'" . utf8_decode($titulo) . "',";
-            $sql.= "'" . utf8_decode($subtitulo) . "',";
-            $sql.= "'" . utf8_decode($descricao) . "',";
-            $sql.= "'" . utf8_decode($descricao_breve) . "',";
+            $sql.= "'" . addslashes($titulo) . "',";
+            $sql.= "'" . addslashes($subtitulo) . "',";
+            $sql.= "'" . addslashes($descricao) . "',";
+            $sql.= "'" . addslashes($descricao_breve) . "',";
             $sql.= "'" . $ordem . "',";
             $sql.= "'" . $ativo . "',";
-            $sql.= "'" . $valor . "',";
+            $sql.= "'" . UtilString::formataValor($valor) . "',";
             $sql.= "'" . $nome . "',";
             $sql.= "'" . $cargo . "',";
-            $sql.= "'" . $funcao . "'";
+            $sql.= "'" . $funcao . "',";
+            $sql.= "'" . $icone_bootstrap_id . "'";
             $sql.= ")";
 
 
@@ -99,19 +101,20 @@ class Conteudo {
 
             $sql = "UPDATE conteudo SET";
             $sql.= " conteudo_categoria_id = '" . $conteudo_categoria_id . "',";
-            $sql.= " titulo = '" . utf8_decode($titulo) . "',";
-            $sql.= " subtitulo = '" . utf8_decode($subtitulo) . "',";
-            $sql.= " descricao = '" . utf8_decode($descricao) . "',";
-            $sql.= " descricao_breve = '" . utf8_decode($descricao_breve) . "',";
+            $sql.= " titulo = '" . addslashes($titulo) . "',";
+            $sql.= " subtitulo = '" . addslashes($subtitulo) . "',";
+            $sql.= " descricao = '" . addslashes($descricao) . "',";
+            $sql.= " descricao_breve = '" . addslashes($descricao_breve) . "',";
             $sql.= " ordem = '" . $ordem . "',";
             $sql.= " ativo = '" . $ativo . "',";
-            $sql.= " valor = '" . $valor . "',";
+            $sql.= " valor = '" . UtilString::formataValor($valor) . "',";
             $sql.= " nome = '" . $nome . "',";
             $sql.= " cargo = '" . $cargo . "',";
-            $sql.= " funcao = '" . $funcao . "'";
+            $sql.= " funcao = '" . $funcao . "',";
+            $sql.= " icone_bootstrap_id = '" . $icone_bootstrap_id  . "'";
             $sql.="WHERE";
             $sql.="	id = " . $id;
-
+            
             DBSql::getExecute($sql);
 
             if (!empty($_FILES['foto']['name'])) {
@@ -160,7 +163,8 @@ class Conteudo {
         $sql.= "	 valor, ";
         $sql.= "	 nome,";
         $sql.= "	 cargo, ";
-        $sql.= "	 funcao ";
+        $sql.= "	 funcao, ";
+        $sql.= "	 icone_bootstrap_id ";
         $sql.= "FROM ";
         $sql.= "	conteudo ";
         $sql.= "WHERE 1=1 ";
@@ -190,7 +194,8 @@ class Conteudo {
         $sql.= "	 valor, ";
         $sql.= "	 nome, ";
         $sql.= "	 cargo, ";
-        $sql.= "	 funcao ";
+        $sql.= "	 funcao, ";
+        $sql.= "	 icone_bootstrap_id ";
         $sql.= " FROM ";
         $sql.= "	conteudo";
         $sql.= " WHERE 1=1";

@@ -57,7 +57,7 @@ class Banner {
             $sql.= ")";
             $sql.= "VALUES (";
             $sql.= "'" . $banner_categoria_id . "',";
-            $sql.= "'" . $nome . "',";
+            $sql.= "'" . addslashes($nome) . "',";
             $sql.= "'" . $link . "',";
             $sql.= "'" . $ativo . "',";
             $sql.= "'" . $descricao . "'";
@@ -86,7 +86,7 @@ class Banner {
 
             $sql = "UPDATE banner SET";
             $sql.= " banner_categoria_id = '" . $banner_categoria_id . "',";
-            $sql.= " nome = '" . $nome . "',";
+            $sql.= " nome = '" . addslashes($nome) . "',";
             $sql.= " link = '" . $link . "',";
             $sql.= " ativo = '" . $ativo . "',";
             $sql.= " descricao = '" . $descricao . "'";
