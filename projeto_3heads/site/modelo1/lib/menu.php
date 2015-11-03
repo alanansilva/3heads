@@ -66,7 +66,9 @@
 </style>
 <div class="header" style="width: 100%; position: fixed; z-index: 3;">
     <div class="header-left">
-        <a class="link link--kumya scroll" href="#home"><span data-letters="3 HEADS">3 HEADS</span></a>
+        <a class="scroll" href="#home">
+            <img src="http://www.focomultimidia.com/img/logo.png" alt="Logo" />
+        </a>
     </div>
     <div class="navigation">
         <span class="menu"><img src="images/menu.png" alt=""/></span>

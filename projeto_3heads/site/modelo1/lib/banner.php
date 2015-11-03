@@ -102,17 +102,17 @@
         <div class="galeria_bxslider_full_ger">
             <ul class="galeria_bxslider_full_sup">
                 <?php
-                 $path = URL_POST_FILE_REMOTE;
-                $objBanner=$banner->getBanner(null, 1);
-                
-                $objColImagem=$imagem->getColecaoImagem(9,$objBanner['id']);
-                while ($objColImagem->proximo()){
-                    $objImagem=$objColImagem->getItem();
-                ?>
-                <li>
-                    <img src="<?php echo $path . $objImagem['nome_img']?>" />
-                </li>
-                <?php
+                $path = URL_POST_FILE_REMOTE;
+                $objBanner = $banner->getBanner(null, 1);
+
+                $objColImagem = $imagem->getColecaoImagem(9, $objBanner['id']);
+                while ($objColImagem->proximo()) {
+                    $objImagem = $objColImagem->getItem();
+                    ?>
+                    <li>
+                        <img src="<?php echo $path . $objImagem['nome_img'] ?>" />
+                    </li>
+                    <?php
                 }
                 ?>
             </ul>
